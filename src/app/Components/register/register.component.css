@@ -1,0 +1,26 @@
+/* login.component.css */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 16px;
+}
+
+.login-form-card {
+    padding: 16px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.register-container {
+    width: 100%;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+button {
+    margin-top: 16px;
+}
