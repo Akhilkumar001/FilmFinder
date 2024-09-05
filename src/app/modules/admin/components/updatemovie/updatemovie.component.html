@@ -4,7 +4,7 @@
 
 
   <mat-card class="movie-form-card p-4 col-6 d-flex flex-column gap-2 align-items-center justify-content-center">
-    <mat-card-title>Movie Form</mat-card-title>
+    <mat-card-title>Update Movie Form</mat-card-title>
     <form   [formGroup]="movieForm" (ngSubmit)="onSubmit()">
       <div class="image-upload-container d-flex flex-column align-items-center">
         <img
@@ -13,6 +13,8 @@
           class="user-icon w-25"
           (click)="fileInput.click()"
         />
+
+    
         <small> * click on above icon to upload Movie Picture</small>
         <input
           type="file"
@@ -78,6 +80,7 @@
 
     </mat-form-field>
 
+    
     <mat-form-field appearance="outline">
 
     <mat-label>Duration</mat-label>
@@ -97,16 +100,13 @@
 
     </mat-form-field>
    
+   
 
 
       
-      <button mat-raised-button color="primary" type="submit" >Add Movie</button>
+      <button mat-raised-button color="primary" type="submit" >Update Movie</button>
     </form>
 
 
   </mat-card>
 </div>
-
-
- <!-- duration: string;
-    language: string; -->

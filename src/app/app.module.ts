@@ -26,6 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import { AboutUsComponent } from './Components/about-us/about-us.component'; 
 import { AuthService } from './Services/auth.service';
+import { MovieService } from './Services/movie.service';
 
 
 
@@ -55,7 +56,7 @@ import { AuthService } from './Services/auth.service';
     MatIconModule,
    
   ],
-  providers: [AuthService],
+  providers: [AuthService,MovieService],
   exports: [HeaderComponent],
   bootstrap: [AppComponent]
 

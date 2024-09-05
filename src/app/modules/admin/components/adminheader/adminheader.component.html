@@ -4,7 +4,7 @@
 <ul class="nav justify-content-end ">
 
   <li class="nav-item">
-    <a class="nav-link active " [ngClass]="isDarkMode?textColorWhite: textColorDark"  aria-current="page" routerLink="/admin-dashborad">Home</a>
+    <a class="nav-link active " [ngClass]="isDarkMode?textColorWhite: textColorDark"  aria-current="page" routerLink='/admin-dashboard'>Home</a>
   </li>
 
     <li class="nav-item">
@@ -14,7 +14,7 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link text-dark" [ngClass]="isDarkMode?textColorWhite:textColorDark" routerLink="/signout">signout</a>
+    <button class="nav-link text-dark" (click)="signout()" [ngClass]="isDarkMode?textColorWhite:textColorDark" >signout</button>
   </li>
   
 

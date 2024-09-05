@@ -7,15 +7,15 @@ import { AddmovieComponent } from './components/addmovie/addmovie.component';
 import { AdminheaderComponent } from './components/adminheader/adminheader.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { MatPaginatorModule } from '@angular/material/paginator';
-
-
 
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { ListofmoviesComponent } from './components/listofmovies/listofmovies.component';
+import { UpdatemovieComponent } from './components/updatemovie/updatemovie.component';
 
 
 @NgModule({
@@ -23,6 +23,8 @@ import { MatIconModule } from '@angular/material/icon';
     AdminDashboardComponent,
     AddmovieComponent,
     AdminheaderComponent,
+    ListofmoviesComponent,
+    UpdatemovieComponent,
   ],
   imports: [
     CommonModule,
@@ -31,10 +33,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    FormsModule
     
-    
-
 ]
 })
 export class AdminModule { }

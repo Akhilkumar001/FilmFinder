@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/Services/auth.service';
 
 
 
@@ -9,10 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminheaderComponent implements OnInit {
 
-constructor()
+  constructor(private a: AuthService, private route: Router)
 {
 
 }
+  
 
   appName: string = "Film Finder "
 
@@ -38,5 +41,12 @@ constructor()
     this.isDarkMode ? this.logoStyles['color'] = 'white' : this.logoStyles['color'] = 'black';
 
   }
+
+  signout()
+  {
+    this.a.logout();
+    this.route.navigate(['/home'])
+  }
+
 
 }

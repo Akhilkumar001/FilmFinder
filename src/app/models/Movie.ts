@@ -1,13 +1,15 @@
 
 
-import { Review } from './Review'; 
-
 export interface Movie {
     movieId: string;       
     movieName: string;    
-    cast: string[];        
+    cast: string[];
+    genre: string[];  
     directorName: string; 
-    releaseDate: Date;     
-    moviePicture: string;  
-    reviews: Review[];     
+    releaseDate: Date; 
+    synopsis: string;
+    moviePicture?: string | ArrayBuffer | null;
+    duration: string;
+    language: string;
+  
 }
