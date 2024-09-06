@@ -37,12 +37,12 @@
      Genre: {{movie.genre}}
    </p>
     <p>
-     Cast: {{movie.cast}}
+     Cast: {{movie.cast}}review
     
    </p>
  </mat-card-content>
  <mat-card-actions>
-   <button mat-button    >Add Review</button>
+   <button mat-button [routerLink]="['/user-dashboard/user-review',movie.movieId]"  >Add Review</button>
    <button mat-button [routerLink]="['/user-dashboard/user-movieinfo',movie.movieId]">Movie Details</button>
  </mat-card-actions>
 </mat-card>

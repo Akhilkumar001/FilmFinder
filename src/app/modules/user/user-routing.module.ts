@@ -6,6 +6,7 @@ import { AboutUsComponent } from 'src/app/Components/about-us/about-us.component
 import { ContactUsComponent } from 'src/app/Components/contact-us/contact-us.component';
 import { AuthService } from 'src/app/Services/auth.service';
 import { UserHomepageComponent } from './components/user-homepage/user-homepage.component';
+import { UserReviewComponent } from './components/user-review/user-review.component';
 const routes: Routes = [
   {
     path: '', component: UserHomepageComponent
@@ -14,8 +15,9 @@ const routes: Routes = [
     path: 'user-movieinfo/:id', component: UserMovieinfoComponent
   },
   {
-    path: 'user-review/:id', component: UserMovieinfoComponent
-  }
+    path: 'user-review/:id', component: UserReviewComponent
+  },
+
 ];
 
 @NgModule({

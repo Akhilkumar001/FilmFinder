@@ -10,6 +10,9 @@ import { UserHomepageComponent } from './components/user-homepage/user-homepage.
 import { UserMovieinfoComponent } from './components/user-movieinfo/user-movieinfo.component';
 
 import {MatCardModule} from '@angular/material/card';
+import { UserReviewComponent } from './components/user-review/user-review.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -17,14 +20,16 @@ import {MatCardModule} from '@angular/material/card';
     UserDashboardComponent,
     UserheaderComponent,
     UserHomepageComponent,
-    UserMovieinfoComponent
+    UserMovieinfoComponent,
+    UserReviewComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     RouterModule,
     UserRoutingModule,
-    MatCardModule
+    MatCardModule,
+    ReactiveFormsModule
   ]
 })
 export class UserModule { }
