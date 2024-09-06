@@ -1,0 +1,58 @@
+<app-userheader></app-userheader> 
+
+
+<!-- Movie Search Bar and Button -->
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="input-group">
+                <input type="text" [(ngModel)]="searchQuery" placeholder="Search Movies..." class="form-control" />
+                <button (click)="searchMovie()" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </div>
+    </div>
+ 
+  
+  <!-- Main Movie Details Container -->
+  
+
+<div class="row ">
+  <mat-card class="col-4" *ngFor="let movie of movies;" class="example-card w-25" appearance="outlined">
+
+ <img mat-card-image [src]="movie.moviePicture" alt="Photo of a Shiba Inu">
+ <mat-card-content>
+   <h2 mat-card-title>{{movie.movieName}}</h2>
+   <h3 mat-card-subtitle>Synopsis</h3>
+   <p class="text-clamp">
+  {{movie.synopsis}}
+   </p>
+ </mat-card-content>
+
+ <mat-card-content>
+   <p>
+     Release Date: {{movie.releaseDate | date:'yyyy-MM-dd'}}
+   </p>
+   <p>
+     Genre: {{movie.genre}}
+   </p>
+    <p>
+     Cast: {{movie.cast}}
+    
+   </p>
+ </mat-card-content>
+ <mat-card-actions>
+   <button mat-button    >Add Review</button>
+   <button mat-button [routerLink]="['/user-dashboard/user-movieinfo',movie.movieId]">Movie Details</button>
+ </mat-card-actions>
+</mat-card>
+
+
+
+
+</div>
+
+
+
+
+<router-outlet></router-outlet>
