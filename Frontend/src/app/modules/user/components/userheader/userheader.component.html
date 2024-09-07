@@ -1,0 +1,20 @@
+<div [ngClass]="isDarkMode ? 'bg-dark p-4 shadow bg-light d-flex align-items-center justify-content-between' : 'bg-light p-4 shadow d-flex align-items-center justify-content-between'">
+    <a class="logo fw-100 fs-20" [ngStyle]="logoStyles" routerLink="/user-dashboard">{{ appName | uppercase }}</a>
+    
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link active" [ngClass]="isDarkMode ? textColorWhite : textColorDark" aria-current="page" routerLink="/user-dashboard">Home</a>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+        <button class="nav-link btn btn-link" (click)="signout()" [ngClass]="isDarkMode ? textColorWhite : textColorDark">Sign Out</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-sm btn-outline-secondary" (click)="toggleDarkMode()">
+          <i class="bi p-1" [ngClass]="isDarkMode ? 'bi-sun' : 'bi-moon'"></i>
+        </button>
+      </li>
+    </ul>
+</div>

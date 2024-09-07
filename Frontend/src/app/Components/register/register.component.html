@@ -1,0 +1,93 @@
+<app-header></app-header>
+<div class="login-container d-flex flex-column flex-md-row p-2 align-items-center">
+  <div class="col-4">
+    <img class="w-100"  src="../../../assets/images/icongif.gif"  alt="Logo">
+  </div>
+
+  <mat-card class="login-form-card p-4 col-6 d-flex flex-column gap-2 align-items-center justify-content-center">
+    <mat-card-title>REGISTER</mat-card-title>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="image-upload-container d-flex flex-column align-items-center">
+        <img
+          [src]="profilePicture || '../../../assets/images/usericon.webp'"
+          alt="User Icon"
+          class="user-icon w-25"
+          (click)="fileInput.click()"
+        />
+        <small> * click on user icon to upload profile Picture</small>
+        <input
+          type="file"
+          (change)="onFileSelected($event)"
+          accept="image/*"
+          #fileInput
+          style="display: none;"
+        />
+      </div>
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" />
+        <mat-error *ngIf="registerForm.controls['firstName'].invalid && (registerForm.controls['firstName'].dirty || registerForm.controls['firstName'].touched)">
+          <ng-container *ngIf="registerForm.controls['firstName'].errors?.['required']">First Name is required.</ng-container>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" />
+        <mat-error *ngIf="registerForm.controls['lastName'].invalid && (registerForm.controls['lastName'].dirty || registerForm.controls['lastName'].touched)">
+          <ng-container *ngIf="registerForm.controls['lastName'].errors?.['required']">Last Name is required.</ng-container>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" />
+        <mat-error *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)">
+          <ng-container *ngIf="registerForm.controls['email'].errors?.['required']">Email is required.</ng-container>
+          <ng-container *ngIf="registerForm.controls['email'].errors?.['email']">Invalid email format.</ng-container>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" />
+        <mat-error *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)">
+          <ng-container *ngIf="registerForm.controls['password'].errors?.['required']">Password is required.</ng-container>
+          <ng-container *ngIf="registerForm.controls['password'].errors?.['minlength']">Password must be at least 6 characters long.</ng-container>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput formControlName="confirmPassword" type="password" />
+        <mat-error *ngIf="registerForm.errors?.['passwordMismatch'] && (registerForm.dirty || registerForm.touched)">
+          <ng-container>Passwords do not match.</ng-container>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput formControlName="dob" type="date" />
+        <mat-error *ngIf="registerForm.controls['dob'].invalid && (registerForm.controls['dob'].dirty || registerForm.controls['dob'].touched)">
+          <ng-container *ngIf="registerForm.controls['dob'].errors?.['required']">Date of Birth is required.</ng-container>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Location</mat-label>
+        <input matInput formControlName="location" />
+        <mat-error *ngIf="registerForm.controls['location'].invalid && (registerForm.controls['location'].dirty || registerForm.controls['location'].touched)">
+          <ng-container *ngIf="registerForm.controls['location'].errors?.['required']">Location is required.</ng-container>
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Register</button>
+    </form>
+
+     <div class="register-link">
+    <a routerLink="/signin">Already  Have an Account Yet?</a>
+  </div>
+  </mat-card>
+</div>
