@@ -6,12 +6,17 @@ import { AddmovieComponent } from './components/addmovie/addmovie.component';
 import { ListofmoviesComponent } from './components/listofmovies/listofmovies.component';
 import { UserDashboardComponent } from '../user/components/user-dashboard/user-dashboard.component';
 import { UpdatemovieComponent } from './components/updatemovie/updatemovie.component';
+import { UpcomingmoviesComponent } from './components/upcomingmovies/upcomingmovies.component';
 const routes: Routes = [
  
   
   {
   path: "", component: AdminDashboardComponent
  
+  },
+
+  {
+    path: 'upcomingmovies', component: UpcomingmoviesComponent
   },
   {
  path:'addmovie',component: AddmovieComponent

@@ -59,13 +59,14 @@ export class RegisterComponent implements OnInit {
       console.log('User Registered:', user);
    
     
-  setTimeout(()=>
-  {
-    this.router.navigate(['/signin']); 
-  },4000)
+      setTimeout(()=>
+      {
+        this.router.navigate(['/signin']); 
+      },4000)
   
     } else {
       console.log('Form is invalid');
+      alert("Please Enter Details In Correct Format  :( ")
     }
   }
 

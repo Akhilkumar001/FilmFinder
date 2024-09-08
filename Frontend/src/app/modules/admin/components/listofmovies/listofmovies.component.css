@@ -29,6 +29,7 @@
     font-family: "Gill Sans Extrabold", sans-serif;
     font-size: 18px;
     font-weight: bold;
+    height: 130px;
 }
 .mat-mdc-card-subtitle
 {
@@ -46,13 +47,36 @@ mat-card-actions{
     padding: 20px;
     width: 130px;
 }
+.loading
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:30%;
+    position: relative;
+    
+}
+.loading img{
+    width:200px;
+}
 .btn1:hover{
     background-color: red;
     border-radius: 10px;
     border: none;
+    color:white;
 }
 .btn2:hover{
     background-color: rgb(55, 40, 115);
     border-radius: 10px;
     border: none;
+    color:white;
+}
+.ngx-pagination
+{
+    margin-left: 0;
+  margin-bottom: 1rem;
+  width: 1000px;
+  position: absolute;
+  bottom: -540px;
+  right: -700px;
 }

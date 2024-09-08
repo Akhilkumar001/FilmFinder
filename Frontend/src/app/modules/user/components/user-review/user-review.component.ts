@@ -22,7 +22,14 @@ export class UserReviewComponent  implements OnInit{
   ];
   selectedMovie: any;
 
-  constructor (private fb: FormBuilder,private authservice:AuthService,private route:ActivatedRoute,private movieservice:MovieService) {
+  constructor(private fb: FormBuilder, private authservice: AuthService, private route: ActivatedRoute, private movieservice: MovieService) {
+    this.reviewForm = this.fb.group({
+      movieTitle: new FormControl({value:'' ,disabled:true}, Validators.required),
+      reviewerName: new FormControl({value:'' ,disabled:true}, Validators.required),
+      rating: new FormControl(null, Validators.required),
+      reviewText: new FormControl(null, Validators.required),
+      reviewDate: new FormControl(null, Validators.required)
+    });
    
   }
 
@@ -38,15 +45,24 @@ export class UserReviewComponent  implements OnInit{
       console.log(this.movieId)
       this.currentUser=this.authservice.getLoggedInUser();
       console.log(this.currentUser)
-      this.selectedMovie=this.movieservice.getMovieDetailsById(this.movieId)
-      console.log("selectdmovie" ,this.selectedMovie)
-      this.reviewForm = this.fb.group({
-        movieTitle: new FormControl({ value: this.selectedMovie.movieName, disabled: true }, Validators.required),
-        reviewerName: new FormControl({ value: this.currentUser.firstName + ' ' + this.currentUser.lastName, disabled: true }, Validators.required),
-        rating:  new FormControl(null,Validators.required),
-        reviewText: new FormControl(null,Validators.required),
-        reviewDate:  new FormControl(null,Validators.required)
-      });
+      this.movieservice.getMovieDetailsByMovieId(this.movieId).subscribe(res =>{
+        this.selectedMovie = res;
+        console.log(res,"       ====",this.selectedMovie)
+
+        console.log("selectdmovie", this.selectedMovie.movieName)
+
+
+        this.reviewForm.get('movieTitle')?.setValue(this.selectedMovie.movieName)
+        this.reviewForm.get('reviewerName')?.setValue(this.currentUser.firstName+" "+this.currentUser.lastName)
+
+      })
+      // this.reviewForm = this.fb.group({
+      //   movieTitle: new FormControl({ value: this.selectedMovie.movieName, disabled: true }, Validators.required),
+      //   reviewerName: new FormControl({ value: this.currentUser.firstName + ' ' + this.currentUser.lastName, disabled: true }, Validators.required),
+      //   rating:  new FormControl(null,Validators.required),
+      //   reviewText: new FormControl(null,Validators.required),
+      //   reviewDate:  new FormControl(null,Validators.required)
+      // });
     })
     
   }

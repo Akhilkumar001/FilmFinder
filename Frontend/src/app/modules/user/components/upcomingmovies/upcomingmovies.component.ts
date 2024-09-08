@@ -1,0 +1,85 @@
+import { Component, OnInit } from '@angular/core';
+import { MovieService } from 'src/app/Services/movie.service';
+@Component({
+  selector: 'app-upcomingmovies',
+  templateUrl: './upcomingmovies.component.html',
+  styleUrls: ['./upcomingmovies.component.css']
+})
+export class UpcomingmoviesComponent implements OnInit {
+
+
+
+  movies: any[] = [];
+  str: string = "";
+  moviePicture: any;
+  p:any;
+
+  constructor(private movieService: MovieService) {
+
+  }
+
+  ngOnInit(): void {
+    this.loadMovies();
+  }
+
+
+  loadMovies() {
+    this.movies.forEach((movie) => {
+
+      console.log("movie ", movie.cast.length);
+
+      for (let i = 0; i < movie.cast.length; i++) {
+        i == 0 ? this.str += movie.cast[i] : this.str = this.str + "," + movie.cast[i]
+
+
+      }
+
+
+      console.log("--------------------------------", this.str);
+    })
+
+    this.movieService.getMovies().subscribe(res => {
+
+      let response = res;
+      this.movies = res;
+      console.log("releaseDate", this.movies[0].releaseDate)
+      console.log(typeof this.movies[0].releaseDate)
+
+
+      this.movies = this.movies.filter(movie => {
+        return new Date(movie.releaseDate) > new Date()
+
+      })
+      console.log("movies", this.movies)
+      for (let movie of this.movies) {
+        if (movie.releaseDate <= new Date()) {
+          console.log("Movie is in the past", movie.movieName)
+        }
+        else {
+          console.log("Movie is in the future", movie.movieName)
+        }
+      }
+      if (Array.isArray(response)) {
+        console.log("--------------------------------", response)
+      }
+      console.log("response ", res)
+      console.log(typeof res)
+    })
+
+  }
+
+
+  deleteMovie(id: any) {
+    console.log(id)
+    // this.movieService.deleteMovieById(id);
+    this.movieService.deleteMovieByMovieId(id).subscribe(res => {
+      console.log(res)
+      alert("Movie deleted successfully :)")
+    })
+    this.loadMovies();
+  }
+
+
+
+
+}

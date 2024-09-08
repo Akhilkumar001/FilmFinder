@@ -18,7 +18,7 @@ export class AuthService {
     if (!userExists) {
       existingUsers.push(user);
       localStorage.setItem(this.storageKey, JSON.stringify(existingUsers));
-      this.toast.showSuccess();
+      this.toast.showSuccess("Registration Completed Successfully");
     } else {
       console.error('User already exists');
     }

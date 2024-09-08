@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { Movie } from 'src/app/models/Movie';
 import { MovieService } from 'src/app/Services/movie.service';
+import { ToastMessagesService } from 'src/app/Services/toast-messages.service';
 
 @Component({
   selector: 'app-addmovie',
@@ -14,7 +15,7 @@ import { MovieService } from 'src/app/Services/movie.service';
 export class AddmovieComponent implements OnInit {
 
 
-  constructor(private movieService: MovieService) { 
+  constructor(private movieService: MovieService,private toast:ToastMessagesService) { 
   }
   moviePicture: string | ArrayBuffer | null = null;
 
@@ -57,9 +58,15 @@ export class AddmovieComponent implements OnInit {
         moviePicture: this.moviePicture
       };
 
-      this.movieService.addMovie(movie)
+      // this.movieService.addMovie(movie)
+      this.movieService.addNewMovie(movie).subscribe(res=>{
+        console.log(res);
+        this.toast.showSuccess('Movie added Successfully')
+      })
     } else {
+      
       console.log('Form is invalid');
+
     }
   }
   onFileSelected(event: Event)

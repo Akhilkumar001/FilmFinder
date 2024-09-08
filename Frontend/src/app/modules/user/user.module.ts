@@ -12,16 +12,18 @@ import { UserMovieinfoComponent } from './components/user-movieinfo/user-moviein
 import {MatCardModule} from '@angular/material/card';
 import { UserReviewComponent } from './components/user-review/user-review.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UpcomingmoviesComponent } from './components/upcomingmovies/upcomingmovies.component';
 
 
-
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     UserDashboardComponent,
     UserheaderComponent,
     UserHomepageComponent,
     UserMovieinfoComponent,
-    UserReviewComponent
+    UserReviewComponent,
+    UpcomingmoviesComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     UserRoutingModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class UserModule { }

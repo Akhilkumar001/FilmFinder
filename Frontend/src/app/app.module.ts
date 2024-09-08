@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,11 +29,12 @@ import { AuthService } from './Services/auth.service';
 import { MovieService } from './Services/movie.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     AppComponent,
     HomeComponent,
@@ -48,11 +49,12 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 7000,
+      timeOut: 4000,
       positionClass: 'custom-toast-position',  // You can change this position
       preventDuplicates: true,
-      closeButton:true
+      
     }),
+    NgxPaginationModule,
     NgbModule,
     FormsModule,
     ReactiveFormsModule,

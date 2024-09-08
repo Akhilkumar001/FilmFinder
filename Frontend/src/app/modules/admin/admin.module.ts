@@ -16,6 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ListofmoviesComponent } from './components/listofmovies/listofmovies.component';
 import { UpdatemovieComponent } from './components/updatemovie/updatemovie.component';
+import { UpcomingmoviesComponent } from './components/upcomingmovies/upcomingmovies.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import { UpdatemovieComponent } from './components/updatemovie/updatemovie.compo
     AdminheaderComponent,
     ListofmoviesComponent,
     UpdatemovieComponent,
+    UpcomingmoviesComponent,
   ],
   imports: [
     CommonModule,
@@ -35,7 +38,8 @@ import { UpdatemovieComponent } from './components/updatemovie/updatemovie.compo
     MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
     
 ]
 })

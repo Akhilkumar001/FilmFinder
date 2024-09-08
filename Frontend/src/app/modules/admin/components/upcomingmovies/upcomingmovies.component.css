@@ -37,26 +37,24 @@
 }
 button{
     border: 1px solid grey;
-    width: 130px;
-    padding: 10px;
-    border-radius: 10px;
+    width: 100%;
 }
 mat-card-actions{
-    justify-content: center;
+    justify-content: space-between;
 }
 .btns
 {
     padding: 20px;
-  width: 230px;
+    width: 130px;
 }
 .btn1:hover{
-    background-color:black;
+    background-color: red;
     border-radius: 10px;
     border: none;
     color:white
 }
 .btn2:hover{
-    background-color:black;
+    background-color: rgb(55, 40, 115);
     border-radius: 10px;
     border: none;
     color:white;

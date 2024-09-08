@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../Services/auth.service'
 import { Router } from '@angular/router';
+import { ToastMessagesService } from 'src/app/Services/toast-messages.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private toast:ToastMessagesService
   ) { }
 
   ngOnInit(): void {
@@ -47,6 +49,7 @@ export class LoginComponent implements OnInit {
           }
         }
       } else {
+        this.toast.showError("Invalid Credentialas")
         console.error('Invalid email or password');
       }
     } else {

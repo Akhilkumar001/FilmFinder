@@ -7,19 +7,20 @@ export class ToastMessagesService {
 
   constructor(private toastr: ToastrService) { }
 
-  showSuccess() {
-    this.toastr.success('Registration Completed Successfully');
+  showSuccess(msg: any) {
+    console.log(msg)
+    this.toastr.success(msg);
   }
 
-  showError() {
-    this.toastr.error('Something went wrong', 'Error');
+  showError(msg: any) {
+    this.toastr.error(msg);
   }
 
-  showInfo() {
-    this.toastr.info('This is an info message', 'Info');
+  showInfo(msg: any) {
+    this.toastr.info(msg);
   }
 
-  showWarning() {
-    this.toastr.warning('This is a warning message', 'Warning');
+  showWarning(msg: any) {
+    this.toastr.warning(msg);
   }
 }
