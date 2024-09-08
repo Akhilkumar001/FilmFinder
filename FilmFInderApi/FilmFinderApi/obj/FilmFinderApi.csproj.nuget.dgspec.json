@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj": {}
+    "C:\\My_WorkSpace\\WEB\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj": {
+    "C:\\My_WorkSpace\\WEB\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
+        "projectUniqueName": "C:\\My_WorkSpace\\WEB\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
         "projectName": "FilmFinderApi",
-        "projectPath": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\obj\\",
+        "projectPath": "C:\\My_WorkSpace\\WEB\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
+        "packagesPath": "C:\\Users\\mahes\\.nuget\\packages\\",
+        "outputPath": "C:\\My_WorkSpace\\WEB\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mahes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -46,6 +46,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.28.0, )"
@@ -74,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

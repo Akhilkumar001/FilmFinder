@@ -1,18 +1,16 @@
 ﻿using FilmFinderApi.Models;
 using FilmFinderApi.Services;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FilmFinderApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class MoviesController : ControllerBase
     {
-
-
         private readonly IMovieService _movieService;
-
         public MoviesController(IMovieService movieService)
         {
             _movieService = movieService;
