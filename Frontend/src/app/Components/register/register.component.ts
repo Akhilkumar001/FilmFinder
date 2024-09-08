@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { v4 as uuidv4 } from 'uuid';
 import { AuthService } from '../../Services/auth.service';
 import { User } from 'src/app/models/User';
+import { ToastMessagesService } from 'src/app/Services/toast-messages.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -17,7 +18,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+   
   ) { }
 
   ngOnInit(): void {
@@ -49,13 +51,19 @@ export class RegisterComponent implements OnInit {
         email,
         password,
         dob,
-        userType: 'user',
+        userType: 'admin',
         location,
         profilePicture: this.profilePicture
       };
       this.authService.register(user);
       console.log('User Registered:', user);
-      this.router.navigate(['/signin']); 
+   
+    
+  setTimeout(()=>
+  {
+    this.router.navigate(['/signin']); 
+  },4000)
+  
     } else {
       console.log('Form is invalid');
     }

@@ -2,3 +2,17 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.custom-toast-position {
+    bottom: 50px !important;
+    right: 100px !important;
+    position: fixed;
+    z-index: 9999;
+  }
+
+  .toast-success {
+    background-color: #28a745 !important;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+  }

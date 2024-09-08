@@ -1,15 +1,14 @@
 <app-header></app-header>
 
 <div class="login-container">
-  <div class="login-image">
-    <img class="w-100" src="../../../assets/images/icongif.gif" alt="Hey">
-  </div>
-
+  <div class="loginForm">
   <mat-card class="login-card">
+
+    <div class="login-image">
+      <img class="imageClass" src="../../../assets/images/pxfuel.jpg" alt="Hey">
+    </div>
+
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-
-
-     
       <mat-card-title>LOGIN</mat-card-title>
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
@@ -30,13 +29,17 @@
       </mat-form-field>
 
 
-      
+      <div class="loginButton">
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
 
-      <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+      </div>
+
+      <div class="register-link">
+        <a routerLink="/register">Don't Have an Account Yet?</a>
+      </div>
+
     </form>
   </mat-card>
 
-  <div class="register-link">
-    <a routerLink="/register">Don't Have an Account Yet?</a>
-  </div>
+</div>
 </div>

@@ -28,6 +28,7 @@ import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { AuthService } from './Services/auth.service';
 import { MovieService } from './Services/movie.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -46,6 +47,12 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 7000,
+      positionClass: 'custom-toast-position',  // You can change this position
+      preventDuplicates: true,
+      closeButton:true
+    }),
     NgbModule,
     FormsModule,
     ReactiveFormsModule,

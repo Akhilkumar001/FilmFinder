@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/User';
+import { ToastMessagesService } from './toast-messages.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class AuthService {
   private readonly storageKey = 'users';
   private readonly currentUserKey = 'currentUser';
 
-  constructor() { }
+  constructor( private toast:ToastMessagesService,) { }
 
   register(user: User): void {
     const existingUsers = this.getUsersFromStorage();
@@ -17,6 +18,7 @@ export class AuthService {
     if (!userExists) {
       existingUsers.push(user);
       localStorage.setItem(this.storageKey, JSON.stringify(existingUsers));
+      this.toast.showSuccess();
     } else {
       console.error('User already exists');
     }
