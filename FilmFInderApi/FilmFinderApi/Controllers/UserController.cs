@@ -33,7 +33,11 @@ namespace FilmFinderApi.Controllers
         public async Task<IActionResult> GetUser(string id)
         {
             var user = await _userService.GetByIdAsync(id);
-            return Ok(user);
+            if (user is not null)
+            {
+                return Ok(user);
+            }
+            return NotFound("No User Found");
         }
 
         [HttpPost("login")]
@@ -57,8 +61,35 @@ namespace FilmFinderApi.Controllers
 
         }
 
-        [HttpPost]
+        [HttpDelete("{id}")]
+        [Authorize]
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            var user = await _userService.GetByIdAsync(id);
+            if (user is not null)
+            {
+                await _userService.DeleteUserAsync(id);
+                return Ok();
+            }
+            return NotFound();
+        }
 
+        [HttpPut("{id}")]
+        [Authorize]
+        public async Task<IActionResult> UpdateUser(string id, User user)
+        {
+            var eUser = await _userService.GetByIdAsync(id);
+            if (eUser is not null)
+            {
+                await _userService.UpdateUserAsync(id, user);
+                return Ok();
+            }
+            return NotFound();
+
+        }
+
+        [HttpPost]
+        [Authorize]
         public async Task<IActionResult> CreateUser(User user)
         {
             if (!ModelState.IsValid)

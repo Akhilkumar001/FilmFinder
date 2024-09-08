@@ -29,9 +29,19 @@ namespace FilmFinderApi.Services
             return _userRepository.GetByIdAsync(id);
         }
 
-        Task<List<User>> IUserService.GetAllAsync()
+        public Task<List<User>> GetAllAsync()
         {
             return _userRepository.GetAllAsync();
+        }
+
+        public Task UpdateUserAsync(string id, User user)
+        {
+            return _userRepository.UpdateUserAsync(id, user);
+        }
+
+        public Task DeleteUserAsync(string id)
+        {
+            return _userRepository.DeleteUserAsync(id);
         }
     }
 }

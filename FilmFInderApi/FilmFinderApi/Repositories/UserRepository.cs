@@ -16,7 +16,7 @@ namespace FilmFinderApi.Repositories
             _settings = settings.Value;
             var client = new MongoClient(_settings.ConnectionString);
             var database = client.GetDatabase(_settings.DatabaseName);
-            _userCollection = database.GetCollection<User>("Users");
+            _userCollection = database.GetCollection<User>(_settings.UsersCollection);
         }
 
         public async Task<User> CreateAsync(User user)
@@ -25,9 +25,9 @@ namespace FilmFinderApi.Repositories
             return user;
         }
 
-        public Task DeleteAsync(string id)
+        public async Task DeleteUserAsync(string id)
         {
-            throw new NotImplementedException();
+            await _userCollection.DeleteOneAsync(u => u.Uid == id);
         }
 
         public Task<List<User>> GetAllAsync()
@@ -45,9 +45,9 @@ namespace FilmFinderApi.Repositories
             return _userCollection.Find(c => c.Uid == id).FirstOrDefaultAsync();
         }
 
-        public Task UpdateAsync(string id, User user)
+        public async Task UpdateUserAsync(string id, User user)
         {
-            throw new NotImplementedException();
+            await _userCollection.ReplaceOneAsync(u => u.Uid == id, user);
         }
     }
 }
