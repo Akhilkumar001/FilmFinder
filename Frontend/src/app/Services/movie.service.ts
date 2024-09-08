@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Movie } from '../models/Movie';
 import { HttpClient } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Injectable({
@@ -12,9 +13,52 @@ export class MovieService {
   moviesKey:string='movies'
   constructor(private http:HttpClient) { }
 
+  baseUrl: string = "https://localhost:7025/api/Movies";
 
 
 
+  // getMovies()
+  // {
+  //   this.http.get()
+
+  //   )
+  // }
+
+
+  getMovies() {
+    return this.http.get<any[]>(this.baseUrl +'/getAllmovies');
+  }
+
+
+  addNewMovie(movie:Movie)
+  {
+    return this.http.post(this.baseUrl + '/addNewMovie', movie, {
+      responseType: 'json'
+    })
+
+  }
+
+  deleteMovieByMovieId(id:any)
+  {
+    return this.http.delete(this.baseUrl + '/deleteMovieByMovieId' + id);
+
+
+  }
+
+  updateMovieByMovieId(movieId: any, updatedMovieDetails: any)
+  {
+
+    console.log("updateMovieByMovieId............")
+    return this.http.put(this.baseUrl + '/updateMovieByMovieId/' + movieId,
+      updatedMovieDetails
+    );
+  }
+
+
+  getMovieDetailsByMovieId(movieId:any)
+  {
+    return this.http.get(this.baseUrl + "/getMovieDetailsByMovieId/" + movieId)
+  }
 
   getAllMovies():Movie[]
   {
@@ -22,11 +66,12 @@ export class MovieService {
    
     console.log("movieslit", movieslit);
     this.http.get('https://localhost:7025/api/Movies').subscribe((response) => {
-      console.log("movies",response);
+      console.log("movies", response);
+      
     })
 
     
-    
+  
   let movies=  localStorage.getItem('movies')
     return movies ? JSON.parse(movies) : [];
 

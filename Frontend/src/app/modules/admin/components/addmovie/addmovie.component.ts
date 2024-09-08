@@ -57,7 +57,11 @@ export class AddmovieComponent implements OnInit {
         moviePicture: this.moviePicture
       };
 
-      this.movieService.addMovie(movie)
+      // this.movieService.addMovie(movie)
+      this.movieService.addNewMovie(movie).subscribe(res=>{
+        console.log(res);
+        alert('movie added Sucessfully :)')
+      })
     } else {
       console.log('Form is invalid');
     }

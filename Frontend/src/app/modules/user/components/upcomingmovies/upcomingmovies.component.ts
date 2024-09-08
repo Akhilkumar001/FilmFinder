@@ -1,37 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService } from './../../../../Services/movie.service';
-import { Movie } from 'src/app/models/Movie';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-
+import { MovieService } from 'src/app/Services/movie.service';
 @Component({
-  selector: 'app-listofmovies',
-  templateUrl: './listofmovies.component.html',
-  styleUrls: ['./listofmovies.component.css']
+  selector: 'app-upcomingmovies',
+  templateUrl: './upcomingmovies.component.html',
+  styleUrls: ['./upcomingmovies.component.css']
 })
-export class ListofmoviesComponent implements OnInit {
+export class UpcomingmoviesComponent implements OnInit {
+
+
 
   movies: any[] = [];
-  str:string="";
+  str: string = "";
   moviePicture: any;
 
   constructor(private movieService: MovieService) {
-    
+
   }
 
   ngOnInit(): void {
-      
+
 
     // this.movies = this.movieService.getAllMovies();
     // console.log(this.movies)
     // console.log(this.movies.length)
     this.loadMovies();
-    
+
   }
 
 
-  loadMovies()
-  {
+  loadMovies() {
     this.movies.forEach((movie) => {
 
       console.log("movie ", movie.cast.length);
@@ -50,6 +47,23 @@ export class ListofmoviesComponent implements OnInit {
 
       let response = res;
       this.movies = res;
+      console.log("releaseDate", this.movies[0].releaseDate)
+      console.log(typeof this.movies[0].releaseDate)
+
+
+      this.movies = this.movies.filter(movie => {
+        return new Date(movie.releaseDate) > new Date()
+
+      })
+      console.log("movies", this.movies)
+      for (let movie of this.movies) {
+        if (movie.releaseDate <= new Date()) {
+          console.log("Movie is in the past", movie.movieName)
+        }
+        else {
+          console.log("Movie is in the future", movie.movieName)
+        }
+      }
       if (Array.isArray(response)) {
         console.log("--------------------------------", response)
       }
@@ -63,7 +77,7 @@ export class ListofmoviesComponent implements OnInit {
   deleteMovie(id: any) {
     console.log(id)
     // this.movieService.deleteMovieById(id);
-    this.movieService.deleteMovieByMovieId(id).subscribe(res=>{
+    this.movieService.deleteMovieByMovieId(id).subscribe(res => {
       console.log(res)
       alert("Movie deleted successfully :)")
     })

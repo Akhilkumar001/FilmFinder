@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GCDfGWi46r0=",
+  "dgSpecHash": "hkRf+R/oSxo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

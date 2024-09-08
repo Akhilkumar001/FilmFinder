@@ -7,8 +7,14 @@
     <a class="nav-link active " [ngClass]="isDarkMode?textColorWhite: textColorDark"  aria-current="page" routerLink='/admin-dashboard'>Home</a>
   </li>
 
+    
     <li class="nav-item">
-      
+
+    <a class="nav-link text-dark" [ngClass]="isDarkMode?textColorWhite:textColorDark" routerLink='/admin-dashboard/upcomingmovies'>Upcoming Movies</a>
+  </li>
+
+  
+    <li class="nav-item">
 
     <a class="nav-link text-dark" [ngClass]="isDarkMode?textColorWhite:textColorDark" routerLink='/admin-dashboard/addmovie'>Add Movie</a>
   </li>
@@ -17,14 +23,11 @@
     <button class="nav-link text-dark" (click)="signout()" [ngClass]="isDarkMode?textColorWhite:textColorDark" >signout</button>
   </li>
   
-
   <li>
     <button class="btn btn-sm btn-outline-secondary" (click)="toggleDarkMode()">
              <i class="bi p-1" [ngClass]="isDarkMode ? 'bi-sun' : 'bi-moon'"></i>
       
     </button>
   </li>
- 
 </ul>
-
 </div>

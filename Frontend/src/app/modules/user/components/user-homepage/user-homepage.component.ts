@@ -67,7 +67,10 @@ export class UserHomepageComponent implements OnInit{
   }
 }
 ngOnInit() {
-  this.movies=this.movieservice.getAllMovies();
+  this.movieservice.getMovies().subscribe(res => {
+    this.movies = res;
+    
+ });
 
 }
 navigateToMovieInfo() {

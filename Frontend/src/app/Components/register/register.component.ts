@@ -55,9 +55,11 @@ export class RegisterComponent implements OnInit {
       };
       this.authService.register(user);
       console.log('User Registered:', user);
+      alert('User Registered Sucessfully : )');
       this.router.navigate(['/signin']); 
     } else {
       console.log('Form is invalid');
+      alert("Please Enter Details In Correct Format  :( ")
     }
   }
 

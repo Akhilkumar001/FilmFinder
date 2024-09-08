@@ -12,6 +12,7 @@ import { UserMovieinfoComponent } from './components/user-movieinfo/user-moviein
 import {MatCardModule} from '@angular/material/card';
 import { UserReviewComponent } from './components/user-review/user-review.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UpcomingmoviesComponent } from './components/upcomingmovies/upcomingmovies.component';
 
 
 
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     UserheaderComponent,
     UserHomepageComponent,
     UserMovieinfoComponent,
-    UserReviewComponent
+    UserReviewComponent,
+    UpcomingmoviesComponent
   ],
   imports: [
     CommonModule,

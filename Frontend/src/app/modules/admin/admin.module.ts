@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ListofmoviesComponent } from './components/listofmovies/listofmovies.component';
 import { UpdatemovieComponent } from './components/updatemovie/updatemovie.component';
+import { UpcomingmoviesComponent } from './components/upcomingmovies/upcomingmovies.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { UpdatemovieComponent } from './components/updatemovie/updatemovie.compo
     AdminheaderComponent,
     ListofmoviesComponent,
     UpdatemovieComponent,
+    UpcomingmoviesComponent,
   ],
   imports: [
     CommonModule,

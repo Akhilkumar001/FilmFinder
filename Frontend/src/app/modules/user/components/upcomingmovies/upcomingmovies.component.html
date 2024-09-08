@@ -1,0 +1,36 @@
+<app-userheader></app-userheader>
+<div class="row ">
+   <mat-card class="col-4" *ngFor="let movie of movies;" class="example-card w-25" appearance="outlined">
+
+  <img mat-card-image [src]="movie.moviePicture" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <h2 mat-card-title>{{movie.movieName}}</h2>
+    <h3 mat-card-subtitle>Synopsis</h3>
+    <p class="text-clamp">
+   {{movie.synopsis}}
+    </p>
+  </mat-card-content>
+
+  <mat-card-content>
+    <p>
+      Release Date: {{movie.releaseDate | date:'yyyy-MM-dd'}}
+    </p>
+    <p>
+      Genre: {{movie.genre}}
+    </p>
+     <p>
+      Cast: {{movie.cast}}
+     
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+        <button mat-button [routerLink]="['/user-dashboard/user-review', movie.movieId]">Add Review</button>
+        <button mat-button [routerLink]="['/user-dashboard/user-movieinfo', movie.movieId]">Movie Details</button>
+  </mat-card-actions>
+</mat-card>
+
+
+
+
+</div>
+
