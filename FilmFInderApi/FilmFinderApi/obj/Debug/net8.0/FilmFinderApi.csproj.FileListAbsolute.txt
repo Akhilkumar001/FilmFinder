@@ -43,3 +43,14 @@ C:\Users\user\Desktop\project\FilmFInderApi\FilmFinderApi\obj\Debug\net8.0\refin
 C:\Users\user\Desktop\project\FilmFInderApi\FilmFinderApi\obj\Debug\net8.0\FilmFinderApi.pdb
 C:\Users\user\Desktop\project\FilmFInderApi\FilmFinderApi\obj\Debug\net8.0\FilmFinderApi.genruntimeconfig.cache
 C:\Users\user\Desktop\project\FilmFInderApi\FilmFinderApi\obj\Debug\net8.0\ref\FilmFinderApi.dll
+C:\My_WorkSpace\WEB\FilmFinder\FilmFInderApi\FilmFinderApi\obj\Debug\net8.0\FilmFinderApi.csproj.AssemblyReference.cache
+C:\My_WorkSpace\WEB\FilmFinder\FilmFInderApi\FilmFinderApi\obj\Debug\net8.0\FilmFinderApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\My_WorkSpace\WEB\FilmFinder\FilmFInderApi\FilmFinderApi\obj\Debug\net8.0\FilmFinderApi.AssemblyInfoInputs.cache
+C:\My_WorkSpace\WEB\FilmFinder\FilmFInderApi\FilmFinderApi\obj\Debug\net8.0\FilmFinderApi.AssemblyInfo.cs
+C:\My_WorkSpace\WEB\FilmFinder\FilmFInderApi\FilmFinderApi\obj\Debug\net8.0\FilmFinderApi.csproj.CoreCompileInputs.cache
+C:\My_WorkSpace\WEB\FilmFinder\FilmFInderApi\FilmFinderApi\obj\Debug\net8.0\FilmFinderApi.MvcApplicationPartsAssemblyInfo.cs
+C:\My_WorkSpace\WEB\FilmFinder\FilmFInderApi\FilmFinderApi\obj\Debug\net8.0\FilmFinderApi.MvcApplicationPartsAssemblyInfo.cache
+C:\My_WorkSpace\WEB\FilmFinder\FilmFInderApi\FilmFinderApi\obj\Debug\net8.0\FilmFinderApi.sourcelink.json
+C:\My_WorkSpace\WEB\FilmFinder\FilmFInderApi\FilmFinderApi\obj\Debug\net8.0\FilmFinderApi.dll
+C:\My_WorkSpace\WEB\FilmFinder\FilmFInderApi\FilmFinderApi\obj\Debug\net8.0\refint\FilmFinderApi.dll
+C:\My_WorkSpace\WEB\FilmFinder\FilmFInderApi\FilmFinderApi\obj\Debug\net8.0\FilmFinderApi.pdb
