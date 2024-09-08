@@ -1,25 +1,23 @@
 ﻿using FilmFinderApi.Models;
 using FilmFinderApi.Services;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FilmFinderApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class MoviesController : ControllerBase
     {
-
-
         private readonly IMovieService _movieService;
-
         public MoviesController(IMovieService movieService)
         {
             _movieService = movieService;
         }
 
         // GET: api/movies
-        [HttpGet]
+        [HttpGet("getAllmovies")]
         public async Task<ActionResult<IEnumerable<Movie>>> GetAllMovies()
         {
             var movies = await _movieService.GetAllMoviesAsync();
@@ -27,7 +25,7 @@ namespace FilmFinderApi.Controllers
         }
 
         // GET: api/movies/{id}
-        [HttpGet("{id}")]
+        [HttpGet("getMovieDetailsByMovieId/{id}")]
         public async Task<ActionResult<Movie>> GetMovieById(string id)
         {
             var movie = await _movieService.GetMovieByIdAsync(id);
@@ -39,7 +37,7 @@ namespace FilmFinderApi.Controllers
         }
 
         // POST: api/movies
-        [HttpPost]
+        [HttpPost("addNewMovie")]
         public async Task<ActionResult> CreateMovie([FromBody] Movie movie)
         {
             if (movie == null)
@@ -53,7 +51,7 @@ namespace FilmFinderApi.Controllers
         }
 
         // PUT: api/movies/{id}
-        [HttpPut("{id}")]
+        [HttpPut("updateMovieByMovieId/{id}")]
         public async Task<ActionResult> UpdateMovie(string id, [FromBody] Movie movie)
         {
             var existingMovie = await _movieService.GetMovieByIdAsync(id);
@@ -67,7 +65,7 @@ namespace FilmFinderApi.Controllers
         }
 
         // DELETE: api/movies/{id}
-        [HttpDelete("{id}")]
+        [HttpDelete("deleteMovieByMovieId{id}")]
         public async Task<ActionResult> DeleteMovie(string id)
         {
             var existingMovie = await _movieService.GetMovieByIdAsync(id);
