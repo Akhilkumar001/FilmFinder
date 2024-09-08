@@ -20,6 +20,7 @@ export class UserHomepageComponent implements OnInit{
     releaseDate: '2024-09-01',
     image: 'assets/images/main-movie.jpg'
   };
+  p:any;
 
   // movies = [
   //   {
@@ -53,13 +54,13 @@ export class UserHomepageComponent implements OnInit{
   // ];
   
   
-  filteredMovies: Array<{ id: number, title: string, rating: number, cast: string[], releaseDate: string, imageUrl: string }> = [...this.movies];  // Initially, display all movies
-  
+   // Initially, display all movies
+  filteredMovies:any[]=[]
  
   searchMovie() {
   if (this.searchQuery.trim()) {
     this.filteredMovies = this.movies.filter(movie =>
-      movie.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+      movie.movieName.toLowerCase().includes(this.searchQuery.toLowerCase())
     );
   } else {
     // If the search query is empty, show all movies
@@ -69,6 +70,7 @@ export class UserHomepageComponent implements OnInit{
 ngOnInit() {
   this.movieservice.getMovies().subscribe(res => {
     this.movies = res;
+    this.filteredMovies = [...this.movies];
     
  });
 
@@ -76,7 +78,6 @@ ngOnInit() {
 navigateToMovieInfo() {
   this.router.navigate(['/user-movieinfo']);
 }
-
 
   // searchMovie() {
   //   console.log('Searching for:', this.searchQuery);

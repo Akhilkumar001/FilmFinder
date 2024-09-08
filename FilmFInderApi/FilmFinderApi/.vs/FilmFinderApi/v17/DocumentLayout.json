@@ -1,49 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinder\\filmfinderapi\\filmfinderapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinder\\filmfinderapi\\filmfinderapi\\repositories\\imovierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:repositories\\imovierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinder\\filmfinderapi\\filmfinderapi\\repositories\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:repositories\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinder\\filmfinderapi\\filmfinderapi\\services\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:services\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinder\\filmfinderapi\\filmfinderapi\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinder\\filmfinderapi\\filmfinderapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinder\\filmfinderapi\\filmfinderapi\\services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinder\\filmfinderapi\\filmfinderapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinder\\filmfinderapi\\filmfinderapi\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinderapi\\filmfinderapi\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinder\\filmfinderapi\\filmfinderapi\\filmfinderdbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinderapi\\filmfinderapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinderapi\\filmfinderapi\\repositories\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:repositories\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinderapi\\filmfinderapi\\services\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:services\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinderapi\\filmfinderapi\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinderapi\\filmfinderapi\\repositories\\imovierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:repositories\\imovierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinderapi\\filmfinderapi\\services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinderapi\\filmfinderapi\\filmfinderdbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:filmfinderdbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinder\\filmfinderapi\\filmfinderapi\\filmfinderapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinderapi\\filmfinderapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|c:\\users\\user\\desktop\\project\\filmfinderapi\\filmfinderapi\\filmfinderapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{E0708A91-91DE-4184-B633-F64693B53ACD}|FilmFinderApi.csproj|solutionrelative:filmfinderapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
@@ -54,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,102 +62,84 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T11:31:57.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
               "Title": "MoviesController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Controllers\\MoviesController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\Controllers\\MoviesController.cs",
               "RelativeDocumentMoniker": "Controllers\\MoviesController.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Controllers\\MoviesController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\Controllers\\MoviesController.cs",
               "RelativeToolTip": "Controllers\\MoviesController.cs",
-              "ViewState": "AQIAACgAAAAArJmZmRkSwDEAAAAwAAAA",
+              "ViewState": "AQIAACcAAACgzMzMzMwswDEAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T12:49:43.204Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T12:49:43.204Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "MovieService.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Services\\MovieService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\Services\\MovieService.cs",
               "RelativeDocumentMoniker": "Services\\MovieService.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Services\\MovieService.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\Services\\MovieService.cs",
               "RelativeToolTip": "Services\\MovieService.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAEwB0AAAA7AAAA",
+              "ViewState": "AQIAABUAAAAQzczMzEwqwB0AAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T12:32:25.952Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T12:32:25.952Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "IMovieService.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Services\\IMovieService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\Services\\IMovieService.cs",
               "RelativeDocumentMoniker": "Services\\IMovieService.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Services\\IMovieService.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\Services\\IMovieService.cs",
               "RelativeToolTip": "Services\\IMovieService.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAqwAoAAAA6AAAA",
+              "ViewState": "AQIAAAYAAAAAAJqZmZmZvwsAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T12:16:12.769Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T12:16:12.769Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "MovieRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Repositories\\MovieRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\Repositories\\MovieRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\MovieRepository.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Repositories\\MovieRepository.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\Repositories\\MovieRepository.cs",
               "RelativeToolTip": "Repositories\\MovieRepository.cs",
-              "ViewState": "AQIAACcAAACAy8zMzMwHwC8AAAAJAAAA",
+              "ViewState": "AQIAACsAAAAQZ2ZmZqYuwAcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T12:11:19.899Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T12:11:19.899Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "Movie.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Models\\Movie.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\Models\\Movie.cs",
               "RelativeDocumentMoniker": "Models\\Movie.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Models\\Movie.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\Models\\Movie.cs",
               "RelativeToolTip": "Models\\Movie.cs",
-              "ViewState": "AQIAABEAAAAAzszMzEwcwBgAAAAxAAAA",
+              "ViewState": "AQIAACAAAABgzczMzMwrwCcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-06T12:00:35.431Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "IMovieRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Repositories\\IMovieRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\Repositories\\IMovieRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\IMovieRepository.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Repositories\\IMovieRepository.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\Repositories\\IMovieRepository.cs",
               "RelativeToolTip": "Repositories\\IMovieRepository.cs",
-              "ViewState": "AQIAAAUAAAAgAAAAAAAhwAsAAAApAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAcwAcAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T11:57:40.932Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T11:57:40.932Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "FilmFinderApi.csproj",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
               "RelativeDocumentMoniker": "FilmFinderApi.csproj",
-              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
+              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
               "RelativeToolTip": "FilmFinderApi.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -169,11 +147,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "FilmFinderDbSettings.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderDbSettings.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\FilmFinderDbSettings.cs",
               "RelativeDocumentMoniker": "FilmFinderDbSettings.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderDbSettings.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\FilmFinderDbSettings.cs",
               "RelativeToolTip": "FilmFinderDbSettings.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -181,24 +159,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-06T08:11:09.618Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T08:11:09.618Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAB8AAADgmpmZmdkhwCkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

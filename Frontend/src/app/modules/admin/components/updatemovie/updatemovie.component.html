@@ -1,30 +1,29 @@
 <app-adminheader></app-adminheader>
 <div class="movie-container d-flex flex-column flex-md-row p-2 align-items-center">
-
+  <div class="movieForm">
+    <div class="image-upload-container p-4 d-flex flex-column align-items-center">
+      <img
+        [src]="moviePicture || '../../../../../assets/images/icongif.gif'"
+        alt="User Icon"
+        class="user-icon "
+        (click)="fileInput.click()"
+      />
+      <small> * click on above icon to upload Movie Picture</small>
+      <input
+        type="file"
+        (change)="onFileSelected($event)"
+        accept="image/*"
+        #fileInput
+        style="display: none;"
+      />
+    </div>
 
 
   <mat-card class="movie-form-card p-4 col-6 d-flex flex-column gap-2 align-items-center justify-content-center">
     <mat-card-title>Update Movie Form</mat-card-title>
+
     <form   [formGroup]="movieForm" (ngSubmit)="onSubmit()">
-      <div class="image-upload-container d-flex flex-column align-items-center">
-        <img
-          [src]="moviePicture || '../../../../../assets/images/icongif.gif'"
-          alt="User Icon"
-          class="user-icon w-25"
-          (click)="fileInput.click()"
-        />
-
-    
-        <small> * click on above icon to upload Movie Picture</small>
-        <input
-          type="file"
-          (change)="onFileSelected($event)"
-          accept="image/*"
-          #fileInput
-          style="display: none;"
-        />
-      </div>
-
+      
 
       <mat-form-field appearance="outline">
         <mat-label>Moview Name</mat-label>
@@ -99,14 +98,11 @@
         </mat-error>
 
     </mat-form-field>
-   
-   
-
-
       
       <button mat-raised-button color="primary" type="submit" >Update Movie</button>
     </form>
 
 
   </mat-card>
+  </div>
 </div>

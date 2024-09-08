@@ -15,7 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UpcomingmoviesComponent } from './components/upcomingmovies/upcomingmovies.component';
 
 
-
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     UserDashboardComponent,
@@ -31,7 +31,8 @@ import { UpcomingmoviesComponent } from './components/upcomingmovies/upcomingmov
     RouterModule,
     UserRoutingModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class UserModule { }

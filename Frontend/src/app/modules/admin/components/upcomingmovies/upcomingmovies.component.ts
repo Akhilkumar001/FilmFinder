@@ -3,6 +3,7 @@ import { MovieService } from './../../../../Services/movie.service';
 import { Movie } from 'src/app/models/Movie';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { ToastMessagesService } from 'src/app/Services/toast-messages.service';
 
 @Component({
   selector: 'app-upcomingmovies',
@@ -15,8 +16,8 @@ export class UpcomingmoviesComponent implements OnInit {
   movies: any[] = [];
   str: string = "";
   moviePicture: any;
-
-  constructor(private movieService: MovieService) {
+p:any;
+  constructor(private movieService: MovieService,private toast :ToastMessagesService) {
 
   }
 
@@ -85,7 +86,10 @@ export class UpcomingmoviesComponent implements OnInit {
     // this.movieService.deleteMovieById(id);
     this.movieService.deleteMovieByMovieId(id).subscribe(res => {
       console.log(res)
-      alert("Movie deleted successfully :)")
+      this.toast.showSuccess("Movie Deleted Successfully")
+    },
+    (err) => {
+      this.toast.showError("Failed to Delete Movie");
     })
     this.loadMovies();
   }

@@ -2,17 +2,66 @@
 <app-userheader></app-userheader>
 
 <!-- Movie Search Bar and Button -->
-<div class="container mt-4">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-8 col-lg-6">
+<div class="container mt-4 w-100">
+  <div class="row1 justify-content-center">
+    <div class="column1">
       <div class="input-group">
-        <input type="text" [(ngModel)]="searchQuery" placeholder="Search Movies..." class="form-control" />
-        <button (click)="searchMovie()" class="btn btn-primary">Search</button>
+        <input type="text" [(ngModel)]="searchQuery" placeholder="Search Movies..." class="form-control" (ngModelChange)="searchMovie()" />
+        <button class="btn btn-primary">Search</button>
       </div>
     </div>
   </div>
 </div>
 
+
+<div class="row ">
+  <mat-card class="col-4" *ngFor="let movie of filteredMovies | paginate: { itemsPerPage: 8, currentPage: p };" class="example-card" appearance="outlined">
+
+ <img mat-card-image [src]="movie.moviePicture" alt="Photo of a Shiba Inu">
+ <mat-card-content>
+   <h2 mat-card-title>{{movie.movieName | uppercase}}</h2>
+   <h3 mat-card-subtitle>Synopsis</h3>
+   <p class="text-clamp" style="font-weight: normal; margin-bottom: 40px;">
+  {{movie.synopsis}}
+   </p>
+ </mat-card-content>
+
+ <mat-card-content>
+   <p>
+     Release Date: {{movie.releaseDate | date:'yyyy-MM-dd'}}
+   </p>
+   <p>
+     Genre: {{movie.genre}}
+   </p>
+    <p>
+     Cast: {{movie.cast}}
+    
+   </p>
+ </mat-card-content>
+ <mat-card-actions>
+   <div class="btns">
+    <button  class="btn1" mat-button [routerLink]="['/user-dashboard/user-review', movie.movieId]">Add Review</button>
+   
+ 
+   </div>
+   <div class="btns">
+    <button class="btn2" mat-button [routerLink]="['/user-dashboard/user-movieinfo', movie.movieId]">Movie Details</button>
+   </div>
+  
+  
+ </mat-card-actions>
+</mat-card>
+</div>
+
+
+<div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+</div>
+
+
+
+<!-- 
 <div class="container mt-4">
   <div class="row g-2 g-md-3 g-lg-4">
     <mat-card class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let movie of movies;" appearance="outlined">
@@ -30,11 +79,10 @@
         <p>Cast: {{movie.cast}}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button [routerLink]="['/user-dashboard/user-review', movie.movieId]">Add Review</button>
-        <button mat-button [routerLink]="['/user-dashboard/user-movieinfo', movie.movieId]">Movie Details</button>
+       
       </mat-card-actions>
     </mat-card>
   </div>
-</div>
+</div> -->
 
 <router-outlet></router-outlet>

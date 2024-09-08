@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { ListofmoviesComponent } from './components/listofmovies/listofmovies.component';
 import { UpdatemovieComponent } from './components/updatemovie/updatemovie.component';
 import { UpcomingmoviesComponent } from './components/upcomingmovies/upcomingmovies.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { UpcomingmoviesComponent } from './components/upcomingmovies/upcomingmov
     MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
     
 ]
 })

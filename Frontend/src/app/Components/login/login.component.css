@@ -4,21 +4,59 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    padding: 16px;
+    padding:16px;
 }
-
-.login-image {
-    flex: 1;
+.imageClass{
+    width:550px;
+    height: 700px;
+    left: -73px;
+  position: relative;
+    
+}
+.login-image
+{
+    padding: 0px 0px 0px 70px;
 }
 
 .login-card {
-    flex: 2;
-    padding: 16px;
-    max-width: 400px;
-    width: 100%;
-}
 
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1100px;
+}
+form{
+
+    padding: 56px;
+    left: -60px;
+    position: relative;
+}
+.loginButton
+{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.loginButton button{
+    width: 100px;
+}
 .register-link {
     margin-top: 16px;
     text-align: center;
+}
+.mat-mdc-card-title
+{
+  padding: 30px 30px 30px 133px;
+  font-size: 26px;
+}
+.mat-mdc-form-field
+{
+    width:350px;
+    padding: 20px 20px 3px 30px;
 }

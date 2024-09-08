@@ -3,6 +3,7 @@ import { MovieService } from './../../../../Services/movie.service';
 import { Movie } from 'src/app/models/Movie';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { ToastMessagesService } from 'src/app/Services/toast-messages.service';
 
 @Component({
   selector: 'app-listofmovies',
@@ -14,8 +15,10 @@ export class ListofmoviesComponent implements OnInit {
   movies: any[] = [];
   str:string="";
   moviePicture: any;
-
-  constructor(private movieService: MovieService) {
+  isLoading:boolean=true;
+  noData:boolean=false;
+p:any;
+  constructor(private toast : ToastMessagesService, private movieService: MovieService) {
     
   }
 
@@ -47,14 +50,22 @@ export class ListofmoviesComponent implements OnInit {
     })
 
     this.movieService.getMovies().subscribe(res => {
-
-      let response = res;
-      this.movies = res;
-      if (Array.isArray(response)) {
-        console.log("--------------------------------", response)
+      if(res.length > 0)
+      {
+        let response = res;
+        this.movies = res;
+        if (Array.isArray(response)) {
+          console.log("--------------------------------", response)
+        }
+        console.log("response ", res)
+        console.log(typeof res)
+        this.isLoading=false;
       }
-      console.log("response ", res)
-      console.log(typeof res)
+      else{
+        this.isLoading=false;
+        this.noData=true;
+      }
+     
     })
 
   }
@@ -63,9 +74,12 @@ export class ListofmoviesComponent implements OnInit {
   deleteMovie(id: any) {
     console.log(id)
     // this.movieService.deleteMovieById(id);
-    this.movieService.deleteMovieByMovieId(id).subscribe(res=>{
+    this.movieService.deleteMovieByMovieId(id).subscribe((res)=>{
       console.log(res)
-      alert("Movie deleted successfully :)")
+      this.toast.showSuccess("Movie Deleted Successfully")
+    },
+    (err) => {
+      this.toast.showError("Failed to Delete Movie");
     })
     this.loadMovies();
   }

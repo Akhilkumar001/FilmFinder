@@ -1,0 +1,61 @@
+.text-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mdc-card__media:first-child
+{
+    height: 240px;
+ width:100%;
+  border-bottom-right-radius: 100px;
+  margin-top: 10px;
+}
+.row
+{
+    display: grid;
+    grid-template-columns: repeat(4,0.2fr);
+    gap: 40px;
+    margin: 20px;
+}
+.mat-mdc-card
+{
+    width: 350px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.mat-mdc-card-content
+{
+    font-family: "Gill Sans Extrabold", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    height: 130px;
+}
+.mat-mdc-card-subtitle
+{
+    margin: 0px;
+}
+button{
+    border: 1px solid grey;
+    width: 100%;
+}
+mat-card-actions{
+    justify-content: space-between;
+}
+.btns
+{
+    padding: 20px;
+    width: 130px;
+}
+.btn1:hover{
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    color:white
+}
+.btn2:hover{
+    background-color: rgb(55, 40, 115);
+    border-radius: 10px;
+    border: none;
+    color:white;
+}

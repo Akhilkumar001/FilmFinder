@@ -24,8 +24,8 @@ export class UserReviewComponent  implements OnInit{
 
   constructor(private fb: FormBuilder, private authservice: AuthService, private route: ActivatedRoute, private movieservice: MovieService) {
     this.reviewForm = this.fb.group({
-      movieTitle: new FormControl({vaule:'' ,disabled:true}, Validators.required),
-      reviewerName: new FormControl('', Validators.required),
+      movieTitle: new FormControl({value:'' ,disabled:true}, Validators.required),
+      reviewerName: new FormControl({value:'' ,disabled:true}, Validators.required),
       rating: new FormControl(null, Validators.required),
       reviewText: new FormControl(null, Validators.required),
       reviewDate: new FormControl(null, Validators.required)

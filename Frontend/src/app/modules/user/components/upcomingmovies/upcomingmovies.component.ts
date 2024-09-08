@@ -12,19 +12,14 @@ export class UpcomingmoviesComponent implements OnInit {
   movies: any[] = [];
   str: string = "";
   moviePicture: any;
+  p:any;
 
   constructor(private movieService: MovieService) {
 
   }
 
   ngOnInit(): void {
-
-
-    // this.movies = this.movieService.getAllMovies();
-    // console.log(this.movies)
-    // console.log(this.movies.length)
     this.loadMovies();
-
   }
 
 

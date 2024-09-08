@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MovieService } from 'src/app/Services/movie.service';
+import { ToastMessagesService } from 'src/app/Services/toast-messages.service';
 import { Movie } from 'src/app/models/Movie';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -19,7 +20,7 @@ export class UpdatemovieComponent implements OnInit {
   selectedMovie: any;
   movieId: string | null = null;
 
-  constructor(private movieService: MovieService, private route: ActivatedRoute,private router:Router) {
+  constructor(private toast:ToastMessagesService, private movieService: MovieService, private route: ActivatedRoute,private router:Router) {
     this.movieForm = new FormGroup({ 
       movieId: new FormControl('', [Validators.required]),
       movieName: new FormControl('', [Validators.required]),
@@ -85,8 +86,12 @@ export class UpdatemovieComponent implements OnInit {
         moviePicture: this.moviePicture === null ? this.selectedMovie?.moviePicture : this.moviePicture
       };
       this.movieService.updateMovieByMovieId(this.selectedMovie.movieId, movie).subscribe(res => {
-        alert("Updated successfully");
+       this.toast.showSuccess("Updated Successfully")
+       setTimeout(()=>
+      {
         this.router.navigate(['/admin-dashboard'])
+      },3000)
+       
       });
     } else {
       console.log('Form is invalid');

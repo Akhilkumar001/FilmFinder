@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj": {}
+    "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj": {
+    "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
         "projectName": "FilmFinderApi",
-        "projectPath": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\project\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\project\\FilmFInderApi\\FilmFinderApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

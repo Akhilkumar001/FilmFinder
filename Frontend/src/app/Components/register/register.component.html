@@ -1,12 +1,16 @@
 <app-header></app-header>
 <div class="login-container d-flex flex-column flex-md-row p-2 align-items-center">
-  <div class="col-4">
-    <img class="w-100"  src="../../../assets/images/icongif.gif"  alt="Logo">
-  </div>
+  <div class="loginForm">
+  <mat-card class="login-form-card">
 
-  <mat-card class="login-form-card p-4 col-6 d-flex flex-column gap-2 align-items-center justify-content-center">
-    <mat-card-title>REGISTER</mat-card-title>
+    <div class="col-4">
+      <img class="imageClass" src="../../../assets/images/pxfuel.jpg"  alt="Logo">
+    </div>
+
+
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      
+    <mat-card-title>REGISTER</mat-card-title>
       <div class="image-upload-container d-flex flex-column align-items-center">
         <img
           [src]="profilePicture || '../../../assets/images/usericon.webp'"
@@ -23,8 +27,8 @@
           style="display: none;"
         />
       </div>
-
-
+<div class="registerForm">
+    <div>
       <mat-form-field appearance="outline">
         <mat-label>First Name</mat-label>
         <input matInput formControlName="firstName" />
@@ -32,7 +36,8 @@
           <ng-container *ngIf="registerForm.controls['firstName'].errors?.['required']">First Name is required.</ng-container>
         </mat-error>
       </mat-form-field>
-
+    </div>
+    <div>
       <mat-form-field appearance="outline">
         <mat-label>Last Name</mat-label>
         <input matInput formControlName="lastName" />
@@ -40,7 +45,8 @@
           <ng-container *ngIf="registerForm.controls['lastName'].errors?.['required']">Last Name is required.</ng-container>
         </mat-error>
       </mat-form-field>
-
+    </div>
+    <div>
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
         <input matInput formControlName="email" type="email" />
@@ -49,7 +55,8 @@
           <ng-container *ngIf="registerForm.controls['email'].errors?.['email']">Invalid email format.</ng-container>
         </mat-error>
       </mat-form-field>
-
+    </div>
+    <div>
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
         <input matInput formControlName="password" type="password" />
@@ -58,6 +65,8 @@
           <ng-container *ngIf="registerForm.controls['password'].errors?.['minlength']">Password must be at least 6 characters long.</ng-container>
         </mat-error>
       </mat-form-field>
+    </div>
+    <div>
 
       <mat-form-field appearance="outline">
         <mat-label>Confirm Password</mat-label>
@@ -66,7 +75,8 @@
           <ng-container>Passwords do not match.</ng-container>
         </mat-error>
       </mat-form-field>
-
+</div>
+<div>
       <mat-form-field appearance="outline">
         <mat-label>Date of Birth</mat-label>
         <input matInput formControlName="dob" type="date" />
@@ -74,7 +84,8 @@
           <ng-container *ngIf="registerForm.controls['dob'].errors?.['required']">Date of Birth is required.</ng-container>
         </mat-error>
       </mat-form-field>
-
+    </div>
+    <div>
       <mat-form-field appearance="outline">
         <mat-label>Location</mat-label>
         <input matInput formControlName="location" />
@@ -82,12 +93,18 @@
           <ng-container *ngIf="registerForm.controls['location'].errors?.['required']">Location is required.</ng-container>
         </mat-error>
       </mat-form-field>
-
+    </div>
+  </div>
+  <div class="registerButton">
       <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Register</button>
+    </div>
+    
+    <div class="register-link">
+      <a routerLink="/signin">Already  Have an Account Yet?</a>
+    </div>
     </form>
 
-     <div class="register-link">
-    <a routerLink="/signin">Already  Have an Account Yet?</a>
-  </div>
+
   </mat-card>
+  </div>
 </div>
