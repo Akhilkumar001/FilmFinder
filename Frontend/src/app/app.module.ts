@@ -50,7 +50,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 4000,
-      positionClass: 'custom-toast-position',  // You can change this position
+      positionClass: 'custom-toast-position', 
       preventDuplicates: true,
       
     }),
@@ -73,3 +73,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 })
 export class AppModule { }
+
+
+
+
+
+
+
+

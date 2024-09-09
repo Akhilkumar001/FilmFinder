@@ -5,57 +5,83 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.mdc-card__media:first-child
-{
+
+.mdc-card__media:first-child {
     height: 240px;
- width:100%;
-  border-bottom-right-radius: 100px;
-  margin-top: 10px;
+    width: 100%;
+    border-bottom-right-radius: 100px;
+    margin-top: 10px;
 }
-.row
-{
+
+.row {
     display: grid;
-    grid-template-columns: repeat(4,0.2fr);
+    grid-template-columns: repeat(4, 0.2fr);
     gap: 40px;
     margin: 20px;
 }
-.mat-mdc-card
-{
+
+.mat-mdc-card {
     width: 350px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
-.mat-mdc-card-content
-{
+
+.mat-mdc-card-content {
     font-family: "Gill Sans Extrabold", sans-serif;
     font-size: 18px;
     font-weight: bold;
     height: 130px;
 }
-.mat-mdc-card-subtitle
-{
+
+.mat-mdc-card-subtitle {
     margin: 0px;
 }
-button{
+
+button {
     border: 1px solid grey;
     width: 100%;
 }
-mat-card-actions{
+
+mat-card-actions {
     justify-content: space-between;
 }
-.btns
-{
+
+.btns {
     padding: 20px;
     width: 130px;
 }
-.btn1:hover{
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 30%;
+    position: relative;
+
+}
+
+.loading img {
+    width: 200px;
+}
+
+.btn1:hover {
     background-color: red;
     border-radius: 10px;
     border: none;
-    color:white
+    color: white;
 }
-.btn2:hover{
+
+.btn2:hover {
     background-color: rgb(55, 40, 115);
     border-radius: 10px;
     border: none;
-    color:white;
+    color: white;
+}
+
+.ngx-pagination {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    width: 1000px;
+    position: absolute;
+    bottom: -540px;
+    right: -700px;
 }

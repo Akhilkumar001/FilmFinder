@@ -41,9 +41,8 @@ export class UpdatemovieComponent implements OnInit {
       if (this.movieId) {
         this.movieService.getMovieDetailsByMovieId(this.movieId).subscribe(res => {
           this.selectedMovie = res;
-          if (this.selectedMovie) {
             this.initializeForm();
-          }
+        
         });
       } else {
         console.error('No movie ID provided');
@@ -58,7 +57,7 @@ export class UpdatemovieComponent implements OnInit {
       cast: this.selectedMovie.cast || '',
       genre: this.selectedMovie.genre || '',
       directorName: this.selectedMovie.directorName || '',
-      releaseDate: this.selectedMovie.releaseDate || '',
+      releaseDate:new Date( this.selectedMovie.releaseDate ).toISOString().split('T')[0]|| '',
       synopsis: this.selectedMovie.synopsis || '',
       moviePicture: this.selectedMovie.moviePicture || null,
       duration: this.selectedMovie.duration || '',

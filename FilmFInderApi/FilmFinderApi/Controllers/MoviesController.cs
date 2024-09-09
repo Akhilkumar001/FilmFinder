@@ -18,16 +18,16 @@ namespace FilmFinderApi.Controllers
             _movieService = movieService;
         }
 
-        // GET: api/movies
-        [HttpGet]
+
+        [HttpGet("getAllmovies")]
         public async Task<ActionResult<IEnumerable<Movie>>> GetAllMovies()
         {
             var movies = await _movieService.GetAllMoviesAsync();
             return Ok(movies);
         }
 
-        // GET: api/movies/{id}
-        [HttpGet("{id}")]
+
+        [HttpGet("getMovieDetailsByMovieId/{id}")]
         public async Task<ActionResult<Movie>> GetMovieById(string id)
         {
             var movie = await _movieService.GetMovieByIdAsync(id);
@@ -38,8 +38,8 @@ namespace FilmFinderApi.Controllers
             return Ok(movie);
         }
 
-        // POST: api/movies
-        [HttpPost]
+
+        [HttpPost("addNewMovie")]
         public async Task<ActionResult> CreateMovie([FromBody] Movie movie)
         {
             if (movie == null)
@@ -52,8 +52,8 @@ namespace FilmFinderApi.Controllers
             return CreatedAtAction(nameof(GetMovieById), new { id = movie.MovieId }, movie);
         }
 
-        // PUT: api/movies/{id}
-        [HttpPut("{id}")]
+      
+        [HttpPut("updateMovieByMovieId/{id}")]
         public async Task<ActionResult> UpdateMovie(string id, [FromBody] Movie movie)
         {
             var existingMovie = await _movieService.GetMovieByIdAsync(id);
@@ -66,8 +66,7 @@ namespace FilmFinderApi.Controllers
             return NoContent();
         }
 
-        // DELETE: api/movies/{id}
-        [HttpDelete("{id}")]
+        [HttpDelete("deleteMovieByMovieId{id}")]
         public async Task<ActionResult> DeleteMovie(string id)
         {
             var existingMovie = await _movieService.GetMovieByIdAsync(id);
