@@ -62,10 +62,14 @@ export class AddmovieComponent implements OnInit {
       this.movieService.addNewMovie(movie).subscribe(res=>{
         console.log(res);
         this.toast.showSuccess('Movie added Successfully')
-      })
+      },
+      error=>{
+        this.toast.showError("movie already exisit")
+      }
+    )
     } else {
       
-      console.log('Form is invalid');
+      this.toast.showError('Form is invalid');
 
     }
   }

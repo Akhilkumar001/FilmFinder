@@ -17,6 +17,7 @@ export class UserHomepageComponent implements OnInit{
   searchQuery: string = '';
   
   movies:any[]=[]
+
   mainMovie = {
     title: 'Main Movie Title',
     imdbRating: '8.5',
@@ -42,6 +43,10 @@ ngOnInit() {
   this.movieservice.getMovies().subscribe(res => {
     this.movies = res;
     this.filteredMovies = [...this.movies];
+    this.watchlistservice.getAllWatchlist().subscribe(res=>{
+      // console.log(res)
+
+    })
 
     
  });
@@ -54,18 +59,26 @@ AddWatchlist(movieId:any){
     this.currentUser = this.a.getLoggedInUser();
     console.log(this.currentUser);
     const watchlist:Watchlist = {
-      movieId:movieId,
-    movieName: this.selectedMovie.movieName,
-    userId: this.currentUser.uid,
-    userName: this.currentUser.firstName+" "+this.currentUser.lastName,
-    userEmail: this.currentUser.email,
-    watchlistId:"",
-    isAddedToWatchlist:true
+      watchlistId: "66e0173c5d73003ecc74b75a",
+    movieId: "66dca3b5cb1dc966999e7715",
+    movieName: "string1abc",
+    uid: "66dca3b5cb1dc966999e7717",
+    userName: "string",
+    userEmail: "string",
+    isAddedToWatchlist: true
     } 
 
     this.watchlistservice.addWatchlist(watchlist).subscribe(res => {
+      console.log(res)
+      if(res!="failedToAddWatchList"){
       alert("Added to Watchlist successfully")
-    })
+      }
+      
+    },
+    error=>{
+      alert("movie already Added To Watchlist")
+    }
+  )
     
    })
   

@@ -32,9 +32,14 @@ namespace FilmFinderApi.Repositories
         public async Task CreateMovieAsync(Movie movie)
         {
 
-            movie.MovieId=ObjectId.GenerateNewId().ToString();      
+            movie.MovieId=ObjectId.GenerateNewId().ToString();  
+            var existingMovie=_movies.Find(m=>m.MovieId==movie.MovieId || m.MovieName==movie.MovieName).FirstOrDefault() ;
+            if (existingMovie == null)
+            {
 
-            await _movies.InsertOneAsync(movie);
+
+                await _movies.InsertOneAsync(movie);
+            }
         }
 
         public async Task UpdateMovieAsync(string id, Movie movie)

@@ -42,8 +42,14 @@ namespace FilmFinderApi.Controllers
         [HttpPost("addWatchlist")]
         public async Task<ActionResult<Watchlist>> AddWatchlist([FromBody] Watchlist watchlist)
         {
+            
             var createdWatchlist = await _watchlistService.AddWatchlistAsync(watchlist);
+            if (createdWatchlist == null)
+            {
+                return Ok("failedToAddWatchList");
+            }
             return CreatedAtAction(nameof(GetWatchlistById), new { id = createdWatchlist.WatchlistId }, createdWatchlist);
+           
         }
 
         
@@ -81,6 +87,14 @@ namespace FilmFinderApi.Controllers
             }
 
             return NoContent(); 
+        }
+
+        [HttpGet("getAllWatchlistByUserId/{id}")]
+        public async Task<ActionResult<List<Watchlist>>> getAllWatchlistByUserId(string id)
+        {
+            var watchlists = await _watchlistService.GetWatchlistByUserIdAsync(id);
+            
+            return Ok(watchlists);
         }
     }
 }

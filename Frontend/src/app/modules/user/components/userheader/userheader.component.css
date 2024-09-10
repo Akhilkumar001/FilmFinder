@@ -9,3 +9,13 @@
     height: auto;
     margin-right: 10px; /* Adds space between the icon and the text */
 }
+@media (max-width: 767px) {
+    .logo-icon {
+      width: 50px; /* Adjust logo size on mobile */
+    }
+    
+    .nav-link {
+      padding: 0.5rem; /* Make navigation links more compact */
+    }
+  }
+  

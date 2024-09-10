@@ -1,5 +1,6 @@
 ﻿using FilmFinderApi.Configuration;
 using FilmFinderApi.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -32,9 +33,18 @@ namespace FilmFinderApi.Repositories
         // Add a new watchlist item
         public async Task<Watchlist> AddWatchlistAsync(Watchlist watchlist)
         {
-            watchlist.WatchlistId = ObjectId.GenerateNewId().ToString();  // Generate a new ID for the watchlist
-            await _watchlist.InsertOneAsync(watchlist);
-            return watchlist;  // Return the created watchlist
+            watchlist.WatchlistId = ObjectId.GenerateNewId().ToString();
+            var existingMovie = _watchlist.Find(m => m.MovieName == watchlist.MovieName).FirstOrDefault();
+            if (existingMovie == null)
+            {
+                await _watchlist.InsertOneAsync(watchlist);
+                return watchlist;
+
+            }
+            return null;   
+            
+
+            // Return the created watchlist
         }
 
         // Update an existing watchlist item
@@ -49,6 +59,11 @@ namespace FilmFinderApi.Repositories
         {
             var result = await _watchlist.DeleteOneAsync(watchlist => watchlist.WatchlistId == watchlistId);
             return result.DeletedCount > 0;  // Return true if deletion was successful
+        }
+
+        public  async Task<List<Watchlist>> GetWatchlistByUserIdAsync(string uid)
+        {
+           return await _watchlist.Find(w=>w.Uid == uid).ToListAsync(); 
         }
     }
 
