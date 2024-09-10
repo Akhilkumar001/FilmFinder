@@ -41,6 +41,11 @@ namespace FilmFinderApi.Services
         {
             return await _watchlistRepository.DeleteWatchlistAsync(watchlistId);
         }
+
+        public async  Task<List<Watchlist>> GetWatchlistByUserIdAsync(string uid)
+        {
+            return await _watchlistRepository.GetWatchlistByUserIdAsync(uid);
+        }
     }
 
 }

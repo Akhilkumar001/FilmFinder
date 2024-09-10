@@ -7,23 +7,23 @@ namespace FilmFinderApi.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        [BsonElement("_id")] 
+        [BsonElement("watchlistId")]
         public string WatchlistId { get; set; }
 
-        [BsonElement("firstName")]
-        public required string FirstName { get; set; }
-
-        [BsonElement("userEmail")]
-        public required string Email { get; set; }
-
-        [BsonElement("movieId")] 
+        [BsonElement("movieId")]
         public string MovieId { get; set; }
 
         [BsonElement("movieName")]
         public string MovieName { get; set; }
 
-        [BsonElement("userId")]
-        public string? Uid { get; set; }
+        [BsonElement("uid")]
+        public string Uid { get; set; }
+
+        [BsonElement("userName")]
+        public string UserName { get; set; }
+
+        [BsonElement("userEmail")]
+        public string UserEmail { get; set; }  // Ensure this matches the frontend model
 
         [BsonElement("isAddedToWatchlist")]
         public bool IsAddedToWatchlist { get; set; }

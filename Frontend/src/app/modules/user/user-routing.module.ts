@@ -23,7 +23,7 @@ const routes: Routes = [
     path:'upcomingmovies',component:UpcomingmoviesComponent
   },
   {
-    path:'watchlist/:id', component:UserWatchlistComponent
+    path:'watchlist', component:UserWatchlistComponent
   }
 
 ];

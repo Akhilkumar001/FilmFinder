@@ -1,15 +1,51 @@
-<app-userheader></app-userheader>
-<p>user-watchlist works!</p>
-<!-- <div class="watchlist-container">
-    <h2>My Watchlist</h2>
-    <div *ngFor="let item of watchlistItems">
-      <div class="watchlist-item">
-        <img [src]="item.movieImage" alt="{{ item.movieName }}">
-        <div class="item-details">
-          <h3>{{ item.movieName }}</h3>
-          <p>{{ item.movieDescription }}</p>
-        </div>
-      </div>
-    </div>
+<!-- <app-userheader></app-userheader>
+<div class="loading" *ngIf="isLoading">
+  <img src="../../../../../assets/images/loading.gif">
   </div>
-   -->
+  <div *ngIf="!isLoading && !noData">
+  <div class="row "> 
+    <mat-card class="col-4" *ngFor="let movie of movies | paginate: { itemsPerPage: 8, currentPage: p };" class="example-card" appearance="outlined">
+    <img mat-card-image [src]="movie.moviePicture" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <h2 mat-card-title>{{movie.movieName | uppercase}}</h2>
+      <h3 mat-card-subtitle>Synopsis</h3>
+      <p class="text-clamp" style="font-weight: normal; margin-bottom: 40px;">
+     {{movie.synopsis}}
+      </p>
+    </mat-card-content>
+  
+    <mat-card-content>
+      <p>
+        Release Date: {{movie.releaseDate | date:'yyyy-MM-dd'}}
+      </p>
+      <p>
+        Genre: {{movie.genre}}
+      </p>
+       <p>
+        Cast: {{movie.cast}}
+       
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="btns">
+        <button class="btn1" mat-button  (click)="deleteMovie(movie.movieId)"  >Remove From Watch</button>
+      </div>
+      <div class="btns">
+        <button class="btn2" mat-button [routerLink]="['/admin-dashboard/updatemovie',movie.movieId]">Update</button>
+      </div>
+     
+     
+    </mat-card-actions>
+  </mat-card>
+  </div>
+  
+  <div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  
+  </div>
+  
+  </div>
+  
+  <div class="loading" *ngIf="noData && !isLoading">
+    <h1>No Data Available</h1>
+    </div> -->
