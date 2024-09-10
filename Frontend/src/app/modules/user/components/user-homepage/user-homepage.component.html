@@ -15,18 +15,28 @@
 
 
 <div class="row ">
-  <mat-card class="col-4" *ngFor="let movie of filteredMovies | paginate: { itemsPerPage: 8, currentPage: p };" class="example-card" appearance="outlined">
+  <mat-card style="width: 470px; padding: 0px; margin: 0px;" *ngFor="let movie of filteredMovies | paginate: { itemsPerPage: 8, currentPage: p };" class="example-card" appearance="outlined">
 
  <img mat-card-image [src]="movie.moviePicture" alt="Photo of a Shiba Inu">
- <mat-card-content>
+ <mat-card-content style="margin-bottom: 7px;" >
+  <div class="container d-flex flex-column mb-4">
+  <div >
    <h2 mat-card-title>{{movie.movieName | uppercase}}</h2>
+  </div>
+  <div>
    <h3 mat-card-subtitle>Synopsis</h3>
-   <p class="text-clamp" style="font-weight: normal; margin-bottom: 40px;">
+  </div>
+  <br>
+  <div>
+   <p class="text-clamp">    
   {{movie.synopsis}}
-   </p>
+   </p></div>
+  </div>
+  
  </mat-card-content>
+ <br>
 
- <mat-card-content>
+ <mat-card-content class="container d-flex flex-column gap-2">
    <p>
      Release Date: {{movie.releaseDate | date:'yyyy-MM-dd'}}
    </p>
@@ -38,18 +48,24 @@
     
    </p>
  </mat-card-content>
- <mat-card-actions>
-   <div class="btns">
-    <button  class="btn1" mat-button [routerLink]="['/user-dashboard/user-review', movie.movieId]">Add Review</button>
-   
  
-   </div>
-   <div class="btns">
-    <button class="btn2" mat-button [routerLink]="['/user-dashboard/user-movieinfo', movie.movieId]">Movie Details</button>
-   </div>
+ <mat-card-content>
+  <div class="buttoncontainer d-flex gap-2">
+    <div class="btns">
+     <button mat-button [routerLink]="['/user-dashboard/user-review', movie.movieId]">Add Review</button>
   
+    </div>
+    <div class="btns">
+     <button mat-button [routerLink]="['/user-dashboard/user-movieinfo', movie.movieId]">Movie Details</button>
+    </div>
   
- </mat-card-actions>
+    <div class="btns">
+     <button mat-button (click)="AddWatchlist(movie.movieId)"> Watchlist</button>
+    </div>
+   
+   </div>
+ </mat-card-content>
+ 
 </mat-card>
 </div>
 

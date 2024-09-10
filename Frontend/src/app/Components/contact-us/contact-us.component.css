@@ -1,0 +1,38 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .bg-image {
+    background-image: url('https://img.freepik.com/free-photo/movie-background-collage_23-2149876005.jpg');
+    min-height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container.content {
+    background-color: rgba(37, 36, 48, 0.8); /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 50px auto;
+    flex: 1; /* Ensures the content expands to push footer down */
+  }
+  .text-center,label{
+    color: white;
+  }
+  
+  .footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: relative; /* Default for non-fixed footers */
+    bottom: 0;
+  }
+  
+

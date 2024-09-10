@@ -16,6 +16,7 @@ import { UpcomingmoviesComponent } from './components/upcomingmovies/upcomingmov
 
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { UserWatchlistComponent } from './components/user-watchlist/user-watchlist.component';
 @NgModule({
   declarations: [
     UserDashboardComponent,
@@ -23,7 +24,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     UserHomepageComponent,
     UserMovieinfoComponent,
     UserReviewComponent,
-    UpcomingmoviesComponent
+    UpcomingmoviesComponent,
+    UserWatchlistComponent
   ],
   imports: [
     CommonModule,

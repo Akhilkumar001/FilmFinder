@@ -1,0 +1,28 @@
+.body, html {
+    height: 100%;
+    margin: 0;
+}
+.bg-image {
+    /* The background image */
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/hbz-2018-rom-coms-00-index-1542482117.jpg');
+    /* Full height */
+    height: 100%; 
+    /* Background image is centered */
+    background-position: center;
+    /* Background image doesn't repeat */
+    background-repeat: no-repeat;
+    /* Background image covers the entire page */
+    background-size: cover;
+}
+.content {
+    background-color: rgba(188, 209, 242, 0.8); /* White background with opacity */
+    padding: 20px;
+    border-radius: 10px;
+}
+.text-center{
+    font-family: Georgia, 'Times New Roman', Times, serif ;
+    font-weight: 400;
+}
+#p10{
+    font-style: italic;
+}

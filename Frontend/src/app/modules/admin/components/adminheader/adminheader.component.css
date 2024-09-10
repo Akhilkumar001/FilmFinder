@@ -1,0 +1,11 @@
+.logo-icon {
+    width: 50px; /* Adjust the size as necessary */
+    height: auto;
+    margin-right: 10px; /* Adds space between the icon and the text */
+}
+
+.highlight {
+    font-weight: bold;
+    border: 3px solid white;  
+    border-radius: 7px;       
+}

@@ -1202,19 +1202,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {}
+    "C:\\Users\\Subhendu Sarkar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\project\\New folder\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
+      "projectUniqueName": "D:\\project-8sept\\FilmFinder\\PreFinalProj\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
       "projectName": "FilmFinderApi",
-      "projectPath": "C:\\Users\\user\\Desktop\\project\\New folder\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\project\\New folder\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\obj\\",
+      "projectPath": "D:\\project-8sept\\FilmFinder\\PreFinalProj\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
+      "packagesPath": "C:\\Users\\Subhendu Sarkar\\.nuget\\packages\\",
+      "outputPath": "D:\\project-8sept\\FilmFinder\\PreFinalProj\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Subhendu Sarkar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

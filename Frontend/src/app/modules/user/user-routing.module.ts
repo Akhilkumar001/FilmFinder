@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/Services/auth.service';
 import { UserHomepageComponent } from './components/user-homepage/user-homepage.component';
 import { UserReviewComponent } from './components/user-review/user-review.component';
 import { UpcomingmoviesComponent } from './components/upcomingmovies/upcomingmovies.component';
+import { UserWatchlistComponent } from './components/user-watchlist/user-watchlist.component';
 const routes: Routes = [
   {
     path: '', component: UserHomepageComponent
@@ -20,6 +21,9 @@ const routes: Routes = [
   },
   {
     path:'upcomingmovies',component:UpcomingmoviesComponent
+  },
+  {
+    path:'watchlist/:id', component:UserWatchlistComponent
   }
 
 ];
