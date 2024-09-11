@@ -1,26 +1,32 @@
 .movie-info-container {
     display: flex;
-    justify-content: flex-start; /* Aligns the content to the left */
-    align-items: flex-start;
-    background-color: #170401; /* Dark brown background */
+    justify-content: center; 
+    align-items: center;  
+    background-color: #630d0d;
     padding: 15px;
     color: white;
-    flex-wrap: wrap; /* Allows responsive wrapping on small screens */
-    margin-bottom: 0; /* Remove any bottom margin */
+    height: 100%;
+    position: relative;
+    opacity: 1;
+    background-size: cover;
+    /* filter:contrast(100px); */
+    
+    
 }
 
-.movie-image {
-    margin-right: 30px; /* Space between image and text */
-    max-width: 250px;
-}
 
 .movie-image img {
-    max-width: 100%;
-    border-radius: 10px;
+    padding:10px;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+   
+    
 }
 
 .movie-details {
+    margin-top: 70px;
     flex: 1;
     display: flex;
     flex-direction: column; /* Stack movie details vertically */
@@ -44,7 +50,7 @@
 }
 
 .movie-summary-container {
-    background-color:#170401;
+    background-color:black;
     color: white;
     padding: 0px 0 0; /* Add top padding, remove bottom padding */
     margin: 0; /* Remove any margin to avoid gap */

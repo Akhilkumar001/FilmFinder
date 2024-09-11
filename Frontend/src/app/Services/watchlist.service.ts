@@ -53,4 +53,7 @@ export class WatchlistService {
   getWatchListDetailesByUserId(uid:string):Observable<Watchlist[]>{
     return this.http.get<Watchlist[]>(this.baseUrl + '/getAllWatchlistByUserId/'+uid);
   }
+  deleteWatchlistByMovieId(movieId: string): Observable<any> {
+    return this.http.delete(this.baseUrl + '/deleteWatchlistByMovieId/' + movieId);
+  }
 }

@@ -26,9 +26,7 @@ p:any;
   ngOnInit(): void {
 
 
-    // this.movies = this.movieService.getAllMovies();
-    // console.log(this.movies)
-    // console.log(this.movies.length)
+   
     this.loadMovies();
 
   }

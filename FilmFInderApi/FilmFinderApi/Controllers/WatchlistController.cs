@@ -96,5 +96,24 @@ namespace FilmFinderApi.Controllers
             
             return Ok(watchlists);
         }
+        [HttpDelete("deleteWatchlistByMovieId/{id}")]
+        public async Task<ActionResult> DeleteWatchlistByMovieId(string id)
+        {
+            
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var isDeleted = await _watchlistService.DeleteWatchlistByMovieIdAsync(id);
+
+            if (!isDeleted)
+            {
+                return BadRequest("Failed to delete watchlist.");
+            }
+
+            return NoContent();
+        }
     }
 }

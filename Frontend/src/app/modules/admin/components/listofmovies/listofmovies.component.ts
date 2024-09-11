@@ -23,11 +23,6 @@ p:any;
   }
 
   ngOnInit(): void {
-      
-
-    // this.movies = this.movieService.getAllMovies();
-    // console.log(this.movies)
-    // console.log(this.movies.length)
     this.loadMovies();
     
   }
@@ -59,6 +54,10 @@ p:any;
         }
         console.log("response ", res)
         console.log(typeof res)
+        this.movies = this.movies.filter(movie => {
+          return new Date(movie.releaseDate) <= new Date()
+    
+        })
         this.isLoading=false;
       }
       else{

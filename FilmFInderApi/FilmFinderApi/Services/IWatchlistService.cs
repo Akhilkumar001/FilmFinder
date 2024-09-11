@@ -10,5 +10,6 @@ namespace FilmFinderApi.Services
         Task<Watchlist> UpdateWatchlistAsync(string watchlistId, Watchlist watchlist);
         Task<bool> DeleteWatchlistAsync(string watchlistId);
              Task<List<Watchlist>> GetWatchlistByUserIdAsync(string uid);
+        Task<bool> DeleteWatchlistByMovieIdAsync(string movieId);
     }
 }

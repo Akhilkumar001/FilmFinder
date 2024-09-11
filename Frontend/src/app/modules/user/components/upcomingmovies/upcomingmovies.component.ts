@@ -13,6 +13,8 @@ export class UpcomingmoviesComponent implements OnInit {
   str: string = "";
   moviePicture: any;
   p:any;
+  isLoading: boolean=true;
+  noData: boolean=false;
 
   constructor(private movieService: MovieService) {
 
@@ -39,11 +41,13 @@ export class UpcomingmoviesComponent implements OnInit {
     })
 
     this.movieService.getMovies().subscribe(res => {
+      if(res.length>0){
 
       let response = res;
       this.movies = res;
       console.log("releaseDate", this.movies[0].releaseDate)
       console.log(typeof this.movies[0].releaseDate)
+      this.isLoading=false;
 
 
       this.movies = this.movies.filter(movie => {
@@ -64,9 +68,14 @@ export class UpcomingmoviesComponent implements OnInit {
       }
       console.log("response ", res)
       console.log(typeof res)
-    })
+    }
+    else{
+      this.isLoading=false;
+      this.noData=true;
+    }
 
-  }
+  })
+}
 
 
   deleteMovie(id: any) {

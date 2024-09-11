@@ -1,23 +1,23 @@
 <app-userheader></app-userheader>
 
-<div class="movie-info-container container-fluid">
-    <!-- Movie Image -->
+<div [style.background-image]="'url('+ movie.moviePicture +')'" class="movie-info-container container-fluid">
+    
     <div class="movie-image">
-        <img src="assets\images\image1.jpg" alt="{{ movie.name }} Poster">
+        <img [src]="movie.moviePicture" alt="{{ movie.name }} Poster">
     </div>
   
-    <!-- Movie Details -->
+    
     <div class="movie-details">
-        <h1 class="movie-title">{{ movie.name }}</h1>
+        <h1 class="movie-title">{{ movie.movieName }}</h1>
         <p class="movie-genre"><strong>Genre:</strong> {{ movie.genre }}</p>
         <hr>
-        <p class="movie-rating"><strong>IMDb Rating:</strong> {{ movie.imdbRating }}</p>
-        <hr>
+        <!-- <p class="movie-rating"><strong>IMDb Rating:</strong> {{ movie.imdbRating }}</p>
+        <hr> -->
         <p class="movie-cast"><strong>Cast:</strong> {{ movie.cast.join(', ') }}</p>
         <hr>
         <p class="movie-release-date"><strong>Release Date:</strong> {{ movie.releaseDate }}</p>
         <hr>
-        <p class="movie-director"><strong>Director:</strong> {{ movie.director }}</p>
+        <p class="movie-director"><strong>Director:</strong> {{ movie.directorName }}</p>
         <hr>
         <p class="movie-duration"><strong>Duration:</strong> {{ movie.duration }}</p>
         <hr>
@@ -28,9 +28,16 @@
     </div>
   </div>
   
-  <!-- Movie Summary Section -->
+  
   <div class="movie-summary-container">
-    <h3 class="movie-summary-title">Summary</h3>
-    <h6 class="movie-summary">{{ movie.summary }}</h6>
-    <button class="btn btn-primary" (click)="addReview()">Add Review</button>
+    <h3 class="movie-summary-title">Synopsis</h3>
+    <h6 class="movie-summary">{{ movie.synopsis }}</h6>
+    
+  </div>
+  <div *ngFor="let review of review"  class="card border-rounded bg shadow mb-3 d-flex flex-row justify-content-start align-items-center gap-5 "> 
+    <!-- <img width="400px" [src]="currentUser" alt=""> -->
+    <h1 class="col-6">{{review.comment}}</h1>
+    <h1>{{currentUser.firstName+" "+currentUser.lastName}}</h1>
+
+
   </div>

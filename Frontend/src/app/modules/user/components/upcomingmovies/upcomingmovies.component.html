@@ -1,4 +1,9 @@
 <app-userheader></app-userheader>
+<div class="loading" *ngIf="isLoading">
+  <img src="../../../../../assets/images/loading.gif">
+</div>
+
+<div *ngIf="!isLoading && !noData">
 <div class="row ">
   <mat-card class="col-4" *ngFor="let movie of movies| paginate: { itemsPerPage: 8, currentPage: p };" class="example-card" appearance="outlined">
 
@@ -24,10 +29,10 @@
    </p>
  </mat-card-content>
  <mat-card-actions>
-   <div class="btns">
+   <!-- <div class="btns">
     <button class="btn1" mat-button [routerLink]="['/user-dashboard/user-review', movie.movieId]">Add Review</button>
  
-   </div>
+   </div> -->
    <div class="btns">
     <button class="btn2" mat-button [routerLink]="['/user-dashboard/user-movieinfo', movie.movieId]">Movie Details</button>
    </div>
@@ -36,9 +41,13 @@
  </mat-card-actions>
 </mat-card>
 </div>
+</div>
 
 
 <div>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
+</div>
+<div class="loading" *ngIf="noData && !isLoading">
+  <h1>No Data Available</h1>
 </div>

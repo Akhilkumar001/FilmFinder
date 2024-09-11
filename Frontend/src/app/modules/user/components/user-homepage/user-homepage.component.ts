@@ -17,6 +17,8 @@ export class UserHomepageComponent implements OnInit{
   searchQuery: string = '';
   
   movies:any[]=[]
+  isLoading: boolean=true;
+  noData: boolean=false;
 
   mainMovie = {
     title: 'Main Movie Title',
@@ -40,17 +42,33 @@ export class UserHomepageComponent implements OnInit{
   }
 }
 ngOnInit() {
+  this.loadMovies();
+ 
+
+ 
+}
+loadMovies(){
   this.movieservice.getMovies().subscribe(res => {
-    this.movies = res;
+    if(res.length>0){
+      this.movies = res;
     this.filteredMovies = [...this.movies];
     this.watchlistservice.getAllWatchlist().subscribe(res=>{
-      // console.log(res)
+    
+    })
+    this.filteredMovies = this.filteredMovies.filter(movie => {
+      return new Date(movie.releaseDate) <= new Date()
 
     })
-
+    this.isLoading=false;
+    }
+    else{
+      this.isLoading=false;
+      this.noData=true;
+    }
+    
     
  });
- 
+
 }
 
 AddWatchlist(movieId:any){
@@ -60,11 +78,11 @@ AddWatchlist(movieId:any){
     console.log(this.currentUser);
     const watchlist:Watchlist = {
       watchlistId: "66e0173c5d73003ecc74b75a",
-    movieId: "66dca3b5cb1dc966999e7715",
-    movieName: "string1abc",
+    movieId: this.selectedMovie.movieId,
+    movieName: this.selectedMovie.movieName,
     uid: "66dca3b5cb1dc966999e7717",
-    userName: "string",
-    userEmail: "string",
+    userName: this.currentUser.firstName+" "+this.currentUser.lastName,
+    userEmail: this.currentUser.email,
     isAddedToWatchlist: true
     } 
 

@@ -1,52 +1,35 @@
 <app-adminheader></app-adminheader>
 
 <div class="loading" *ngIf="isLoading">
-<img src="../../../../../assets/images/loading.gif">
+  <img src="../../../../../assets/images/loading.gif">
 </div>
+
 <div *ngIf="!isLoading && !noData">
-<div class="row "> 
-  <mat-card class="col-4" *ngFor="let movie of movies | paginate: { itemsPerPage: 8, currentPage: p };" class="example-card" appearance="outlined">
-  <img mat-card-image [src]="movie.moviePicture" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <h2 mat-card-title>{{movie.movieName | uppercase}}</h2>
-    <h3 mat-card-subtitle>Synopsis</h3>
-    <p class="text-clamp" style="font-weight: normal; margin-bottom: 40px;">
-   {{movie.synopsis}}
-    </p>
-  </mat-card-content>
+  <div class="row">
+    <mat-card class="col" *ngFor="let movie of movies | paginate: { itemsPerPage: 8, currentPage: p };" appearance="outlined">
+      <img mat-card-image [src]="movie.moviePicture" alt="{{movie.movieName}} image" class="movie-image">
+      <mat-card-content>
+        <h2 mat-card-title>{{movie.movieName | uppercase}}</h2>
+        <h3 mat-card-subtitle>Synopsis</h3>
+        <p class="text-clamp">{{movie.synopsis}}</p>
+      </mat-card-content>
 
-  <mat-card-content>
-    <p>
-      Release Date: {{movie.releaseDate | date:'yyyy-MM-dd'}}
-    </p>
-    <p>
-      Genre: {{movie.genre}}
-    </p>
-     <p>
-      Cast: {{movie.cast}}
-     
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <div class="btns">
-      <button class="btn1" mat-button  (click)="deleteMovie(movie.movieId)"  >Delete</button>
-    </div>
-    <div class="btns">
-      <button class="btn2" mat-button [routerLink]="['/admin-dashboard/updatemovie',movie.movieId]">Update</button>
-    </div>
-   
-   
-  </mat-card-actions>
-</mat-card>
-</div>
+      <mat-card-content>
+        <p>Release Date: {{movie.releaseDate | date:'yyyy-MM-dd'}}</p>
+        <p>Genre: {{movie.genre}}</p>
+        <p>Cast: {{movie.cast}}</p>
+      </mat-card-content>
 
-<div>
+      <mat-card-actions>
+        <button class="btn1" mat-button (click)="deleteMovie(movie.movieId)">Delete</button>
+        <button class="btn2" mat-button [routerLink]="['/admin-dashboard/updatemovie',movie.movieId]">Update</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
-
-</div>
-
 </div>
 
 <div class="loading" *ngIf="noData && !isLoading">
   <h1>No Data Available</h1>
-  </div>
+</div>
