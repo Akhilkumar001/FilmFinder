@@ -1,21 +1,40 @@
-.highlight {
-    font-weight: bold;
-    border: 3px solid white;  /* Square red border */
-    border-radius: 7px;       /* Ensure no border-radius for square corners */
+/* Header styling */
+
+
+.container {
+  padding-top: 100px; 
 }
 
+/* Logo icon styling */
 .logo-icon {
-    width: 50px; /* Adjust the size as necessary */
-    height: auto;
-    margin-right: 10px; /* Adds space between the icon and the text */
+  width: 50px; /* Size of the logo */
+  height: auto;
+  margin-right: 10px; /* Space between the logo and text */
 }
+
+/* Navigation styling */
+.nav {
+  margin-bottom: 0;
+}
+
+.nav-link {
+  padding: 0.5rem; 
+}
+
+
+.highlight {
+  font-weight: bold;
+  border: 3px solid white;
+  border-radius: 7px; 
+}
+
+
 @media (max-width: 767px) {
-    .logo-icon {
-      width: 50px; /* Adjust logo size on mobile */
-    }
-    
-    .nav-link {
-      padding: 0.5rem; /* Make navigation links more compact */
-    }
+  .logo-icon {
+      width: 40px; 
   }
   
+  .nav-link {
+      padding: 0.5rem; /* Compact navigation links on mobile */
+  }
+}

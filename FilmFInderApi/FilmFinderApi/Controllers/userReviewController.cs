@@ -52,7 +52,7 @@ namespace FilmFinderApi.Controllers
             return Ok(review);
         }
 
-        [HttpGet("getReviewDetailsByMovieId")]
+        [HttpGet("getReviewDetailsByMovieId/{id}")]
         public async Task<ActionResult<List<UserReview>>> GetReviewByMovieId(string id)
         {
             var review = await _reviewService.GetReviewByMovieIdAsync(id);

@@ -19,6 +19,17 @@
     gap: 40px;
     margin: 20px;
 }
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 30%;
+    position: relative;
+}
+
+.loading img {
+    width: 200px;
+}
 .mat-mdc-card
 {
     width: 350px;

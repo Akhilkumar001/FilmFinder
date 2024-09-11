@@ -32,8 +32,11 @@ export class ReviewService {
   }
 
   // Get details of a review by reviewId
-  getReviewDetailsById(reviewId: string): Observable<Review> {
-    return this.http.get<Review>(this.baseUrl + '/getReviewDetailsById/' + reviewId);
+  getReviewDetailsById(reviewId: string): Observable<any> {
+    return this.http.get<any>(this.baseUrl + '/getReviewDetailsById/' + reviewId);
+  }
+  getReviewDetailsByMovieId(movieId: string): Observable<any> {
+    return this.http.get<any>(this.baseUrl + '/getReviewDetailsByMovieId/' + movieId);
   }
 }
 
