@@ -1,0 +1,47 @@
+.watchlist-container {
+    padding: 20px;
+  }
+  
+  .watchlist-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .watchlist-item img {
+    width: 80px;
+    margin-right: 15px;
+  }
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 30%;
+    position: relative;
+}
+
+.loading img {
+    width: 200px;
+}
+  
+  .item-details {
+    font-size: 14px;
+  }
+  h1{
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+  }
+  i:hover{
+    color:red;
+    font-size: 40px;
+    height: 40px;
+    width:40px;
+    font-weight: 100;
+    
+  }
+  i{
+    font-size: 24px; 
+    width: 24px; 
+    height: 24px;
+  }

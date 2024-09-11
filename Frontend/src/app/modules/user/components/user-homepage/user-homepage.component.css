@@ -1,63 +1,138 @@
-.text-clamp {
+/* Ensure the header stays at the top and adjusts to smaller screens */
+app-userheader {
+    position: fixed; /* Fix the position at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+/* Add padding to the top of the container to account for the fixed header */
+.container {
+    padding-top: 10px; /* Adjust this value based on the header height */
+}
+
+/* Movie image styling to fit the card */
+.movie-image {
+    width: 100%;
+    height: 250px; /* Adjust height for a uniform image size */
+    object-fit: cover;
+}
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 30%;
+    position: relative;
+}
+
+.loading img {
+    width: 200px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    margin: 20px 0;
+}
+
+
+.mat-mdc-card {
+    width: 100%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.mat-mdc-card-content {
+    font-family: "Gill Sans Extrabold", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Synopsis clamp styling for two lines with ellipsis */
+.synopsis-clamp {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: 300; /* Lighter font weight for synopsis */
 }
-.mdc-card__media:first-child
-{
-    height: 240px;
- width:100%;
-  border-bottom-right-radius: 100px;
-  margin-top: 10px;
-}
-.row
-{
-    display: grid;
-    grid-template-columns: repeat(4,0.2fr);
-    gap: 40px;
-    margin: 20px;
-}
-.mat-mdc-card
-{
-    width: 350px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-}
-.mat-mdc-card-content
-{
-    font-family: "Gill Sans Extrabold", sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    height: 130px;
-}
-.mat-mdc-card-subtitle
-{
-    margin: 0px;
-}
-button{
-    border: 1px solid grey;
-    width: 130px;
+
+/* Button styling */
+.action-btn {
+    width: 100%; /* Full-width buttons for uniformity */
     padding: 10px;
+    border: 2px solid black;
+    background-color: white;
     border-radius: 10px;
+    text-align: center;
 }
-mat-card-actions{
+
+.action-btn:hover {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+/* Ensure all buttons are the same size and aligned */
+.mat-card-actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.mat-card-actions .action-btn {
+    flex: 1; /* Ensure buttons stretch to the same size */
+}
+
+/* Search bar styling */
+.input-group {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.input-group .form-control {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.input-group .btn {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+    margin-top: 20px;
+    display: flex;
     justify-content: center;
 }
-.btns
-{
-    padding: 20px;
-  width: 230px;
+
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .row {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards in a row on medium screens */
+    }
 }
-.btn1:hover{
-    background-color:black;
-    border-radius: 10px;
-    border: none;
-    color:white
+
+@media (max-width: 768px) {
+    .row {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards in a row on small screens */
+    }
+    .movie-image {
+        height: 200px; /* Adjust image height for small screens */
+    }
 }
-.btn2:hover{
-    background-color:black;
-    border-radius: 10px;
-    border: none;
-    color:white;
+
+@media (max-width: 576px) {
+    .row {
+        grid-template-columns: 1fr; /* 1 card per row on very small screens */
+    }
+    .movie-image {
+        height: 150px; /* Adjust image height for mobile */
+    }
 }

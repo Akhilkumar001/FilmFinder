@@ -13,9 +13,10 @@ export class UpcomingmoviesComponent implements OnInit {
   str: string = "";
   moviePicture: any;
   p:any;
+  isLoading: boolean=true;
+  noData: boolean=false;
 
   constructor(private movieService: MovieService) {
-
   }
 
   ngOnInit(): void {
@@ -30,20 +31,19 @@ export class UpcomingmoviesComponent implements OnInit {
 
       for (let i = 0; i < movie.cast.length; i++) {
         i == 0 ? this.str += movie.cast[i] : this.str = this.str + "," + movie.cast[i]
-
-
       }
-
 
       console.log("--------------------------------", this.str);
     })
 
     this.movieService.getMovies().subscribe(res => {
+      if(res.length>0){
 
       let response = res;
       this.movies = res;
       console.log("releaseDate", this.movies[0].releaseDate)
       console.log(typeof this.movies[0].releaseDate)
+      this.isLoading=false;
 
 
       this.movies = this.movies.filter(movie => {
@@ -64,10 +64,14 @@ export class UpcomingmoviesComponent implements OnInit {
       }
       console.log("response ", res)
       console.log(typeof res)
-    })
+    }
+    else{
+      this.isLoading=false;
+      this.noData=true;
+    }
 
-  }
-
+  })
+}
 
   deleteMovie(id: any) {
     console.log(id)
@@ -78,8 +82,5 @@ export class UpcomingmoviesComponent implements OnInit {
     })
     this.loadMovies();
   }
-
-
-
 
 }

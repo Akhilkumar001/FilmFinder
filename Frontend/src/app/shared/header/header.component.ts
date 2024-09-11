@@ -31,7 +31,7 @@ constructor(private router:ActivatedRoute)
   ngOnInit() {
  
   }
-
+  
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
     this.isDarkMode ? this.logoStyles['color'] = 'white' : this.logoStyles['color'] = 'black';

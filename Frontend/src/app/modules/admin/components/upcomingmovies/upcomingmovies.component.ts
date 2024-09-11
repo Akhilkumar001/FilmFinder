@@ -17,6 +17,8 @@ export class UpcomingmoviesComponent implements OnInit {
   str: string = "";
   moviePicture: any;
 p:any;
+  isLoading: boolean=true;
+  noData: boolean=false;
   constructor(private movieService: MovieService,private toast :ToastMessagesService) {
 
   }
@@ -24,9 +26,7 @@ p:any;
   ngOnInit(): void {
 
 
-    // this.movies = this.movieService.getAllMovies();
-    // console.log(this.movies)
-    // console.log(this.movies.length)
+   
     this.loadMovies();
 
   }
@@ -49,33 +49,38 @@ p:any;
 
     this.movieService.getMovies().subscribe(res => {
 
-      let response = res;
-      this.movies = res;
-      console.log("releaseDate",this.movies[0].releaseDate)
-      console.log(typeof this.movies[0].releaseDate)
+
+      if (res.length > 0) {
+        let response = res;
+        this.movies = res;
+        console.log("releaseDate", this.movies[0].releaseDate)
+        console.log(typeof this.movies[0].releaseDate)
+        this.isLoading=false;
 
 
-     this.movies= this.movies.filter(movie => {
-        return new Date(movie.releaseDate)> new Date()
+        this.movies = this.movies.filter(movie => {
+          return new Date(movie.releaseDate) > new Date()
 
-      })
-      console.log("movies",this.movies)
-      for (let movie of this.movies)
-      {
-        if(movie.releaseDate <= new Date())
-        {
-          console.log("Movie is in the past", movie.movieName)
+        })
+        console.log("movies", this.movies)
+        for (let movie of this.movies) {
+          if (movie.releaseDate <= new Date()) {
+            console.log("Movie is in the past", movie.movieName)
+          }
+          else {
+            console.log("Movie is in the future", movie.movieName)
+          }
         }
-        else
-        {
-          console.log("Movie is in the future", movie.movieName)
+        if (Array.isArray(response)) {
+          console.log("--------------------------------", response)
         }
+        console.log("response ", res)
+        console.log(typeof res)
       }
-      if (Array.isArray(response)) {
-        console.log("--------------------------------", response)
+      else {
+        this.isLoading = false;
+        this.noData = true;
       }
-      console.log("response ", res)
-      console.log(typeof res)
     })
 
   }
@@ -93,8 +98,5 @@ p:any;
     })
     this.loadMovies();
   }
-
-
-
 
 }

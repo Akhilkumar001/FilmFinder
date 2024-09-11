@@ -1,3 +1,51 @@
+.movie-image {
+    width: 100%; /* Ensure the image fills the width of the card */
+    height: 200px; /* Set a consistent height */
+    object-fit: cover; /* Image fits inside card without stretching */
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid layout */
+    gap: 20px;
+    margin: 20px;
+}
+
+.mat-mdc-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+mat-card-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    flex-wrap: nowrap;
+}
+
+.btn1, .btn2 {
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+.btn1:hover {
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+
+.btn2:hover {
+    background-color: rgb(55, 40, 115);
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+
 .text-clamp {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -5,57 +53,45 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.mdc-card__media:first-child
-{
-    height: 240px;
- width:100%;
-  border-bottom-right-radius: 100px;
-  margin-top: 10px;
+
+/* Loading animation */
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 30%;
+    position: relative;
 }
-.row
-{
-    display: grid;
-    grid-template-columns: repeat(4,0.2fr);
-    gap: 40px;
-    margin: 20px;
+
+.loading img {
+    width: 200px;
 }
-.mat-mdc-card
-{
-    width: 350px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-}
-.mat-mdc-card-content
-{
-    font-family: "Gill Sans Extrabold", sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    height: 130px;
-}
-.mat-mdc-card-subtitle
-{
-    margin: 0px;
-}
-button{
-    border: 1px solid grey;
+
+/* Pagination controls adjustments */
+.ngx-pagination {
+    margin-left: 0;
+    margin-bottom: 1rem;
     width: 100%;
+    position: absolute;
+    bottom: -20px;
+    right: 0;
 }
-mat-card-actions{
-    justify-content: space-between;
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .row {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust for tablet view */
+    }
+    .movie-image {
+        height: 180px; /* Adjust image height for tablet */
+    }
 }
-.btns
-{
-    padding: 20px;
-    width: 130px;
-}
-.btn1:hover{
-    background-color: red;
-    border-radius: 10px;
-    border: none;
-    color:white
-}
-.btn2:hover{
-    background-color: rgb(55, 40, 115);
-    border-radius: 10px;
-    border: none;
-    color:white;
+
+@media (max-width: 576px) {
+    .row {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust for mobile */
+    }
+    .movie-image {
+        height: 150px; /* Adjust image height for mobile */
+    }
 }

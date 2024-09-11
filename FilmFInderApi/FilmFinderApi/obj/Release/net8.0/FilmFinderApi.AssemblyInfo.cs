@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FilmFinderApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c27d046613941d48cc96bb4c528afd65b8fe2935")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a5dc2c41efa3401fa6854385043353f0ec287e5")]
 [assembly: System.Reflection.AssemblyProductAttribute("FilmFinderApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FilmFinderApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

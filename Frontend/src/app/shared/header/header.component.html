@@ -1,30 +1,25 @@
+<div [ngClass]="isDarkMode ? 'bg-dark p-4 shadow bg-light d-flex align-items-center justify-content-between' : 'bg-light p-4 shadow d-flex align-items-center justify-content-between'">
+  <a class="logo fw-100 fs-20" [ngStyle]="logoStyles" routerLink="/">
+    <img src="assets/images/200w.gif" alt="FilmFinder Icon" class="logo-icon">
+    {{ appName | uppercase }}</a>
 
-<div [ngClass]="isDarkMode?'bg-dark p-4 shadow bg-light d-flex align-items-center justify-content-between':'bg- p-4 shadow bg-light d-flex align-items-center justify-content-between' ">
-  <a class="logo fw-100 fs-20  "   [ngStyle]="logoStyles" routerLink="/">{{appName | uppercase}}</a>
-<ul class="nav justify-content-end ">
-
-  <li class="nav-item">
-    <a class="nav-link active " [ngClass]="isDarkMode?textColorWhite: textColorDark"  aria-current="page" routerLink="/">Home</a>
-  </li>
-
+  <ul class="nav justify-content-end">
     <li class="nav-item">
-    <a class="nav-link text-dark" [ngClass]="isDarkMode?textColorWhite:textColorDark" routerLink="/aboutUs">about us</a>
-  </li>
+      <a class="nav-link" [ngClass]="isDarkMode ? textColorWhite : textColorDark" routerLink="/" routerLinkActive="highlight" [routerLinkActiveOptions]="{ exact: true }" aria-current="page">Home</a>
+    </li>
     <li class="nav-item">
-    <a class="nav-link text-dark" [ngClass]="isDarkMode?textColorWhite:textColorDark" routerLink="/contactUs">contact us</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link text-dark" [ngClass]="isDarkMode?textColorWhite:textColorDark" routerLink="/signin">sign in </a>
-  </li>
-  
-
-  <li>
-    <button class="btn btn-sm btn-outline-secondary" (click)="toggleDarkMode()">
-             <i class="bi p-1" [ngClass]="isDarkMode ? 'bi-sun' : 'bi-moon'"></i>
-      
-    </button>
-  </li>
- 
-</ul>
-
+      <a class="nav-link" [ngClass]="isDarkMode ? textColorWhite : textColorDark" routerLink="/aboutUs" routerLinkActive="highlight">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="isDarkMode ? textColorWhite : textColorDark" routerLink="/contactUs" routerLinkActive="highlight">Contact Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="isDarkMode ? textColorWhite : textColorDark" routerLink="/signin" routerLinkActive="highlight">Sign In</a>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-outline-secondary" (click)="toggleDarkMode()">
+        <i class="bi p-1" [ngClass]="isDarkMode ? 'bi-sun' : 'bi-moon'"></i>
+      </button>
+    </li>
+  </ul>
 </div>

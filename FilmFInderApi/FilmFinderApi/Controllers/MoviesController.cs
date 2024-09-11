@@ -7,7 +7,6 @@ namespace FilmFinderApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class MoviesController : ControllerBase
     {
         private readonly IMovieService _movieService;
@@ -65,7 +64,7 @@ namespace FilmFinderApi.Controllers
         }
 
         // DELETE: api/movies/{id}
-        [HttpDelete("deleteMovieByMovieId{id}")]
+        [HttpDelete("deleteMovieByMovieId/{id}")]
         public async Task<ActionResult> DeleteMovie(string id)
         {
             var existingMovie = await _movieService.GetMovieByIdAsync(id);

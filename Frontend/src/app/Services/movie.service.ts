@@ -26,71 +26,51 @@ export class MovieService {
 
 
   getMovies() {
-    return this.http.get<any[]>(this.baseUrl +'/getAllmovies');
+    return this.http.get<any[]>(this.baseUrl + '/getAllmovies', {
+      withCredentials: true // Important for sending cookies/session information
+    });
   }
-
+  
 
   addNewMovie(movie:Movie)
   {
     return this.http.post(this.baseUrl + '/addNewMovie', movie, {
+      withCredentials: true, // Important for sending cookies/session information
       responseType: 'json'
     })
 
   }
 
-  deleteMovieByMovieId(id:any)
-  {
-    return this.http.delete(this.baseUrl + '/deleteMovieByMovieId' + id);
-
-
+  deleteMovieByMovieId(id: any) {
+    return this.http.delete(this.baseUrl + '/deleteMovieByMovieId/' + id, {
+      withCredentials: true
+    });
   }
+  
 
-  updateMovieByMovieId(movieId: any, updatedMovieDetails: any)
-  {
-
+  updateMovieByMovieId(movieId: any, updatedMovieDetails: any) {
     console.log("updateMovieByMovieId............")
-    return this.http.put(this.baseUrl + '/updateMovieByMovieId/' + movieId,
-      updatedMovieDetails
-    );
+    return this.http.put(this.baseUrl + '/updateMovieByMovieId/' + movieId, updatedMovieDetails, {
+      withCredentials: true
+    });
   }
-
-
-  getMovieDetailsByMovieId(movieId:any)
-  {
-    return this.http.get(this.baseUrl + "/getMovieDetailsByMovieId/" + movieId)
+  
+  getMovieDetailsByMovieId(movieId: any) {
+    return this.http.get(this.baseUrl + "/getMovieDetailsByMovieId/" + movieId, {
+      withCredentials: true
+    });
   }
+  
 
   getAllMovies():Movie[]
   {
-    let movieslit = this.http.get('https://localhost:7025/api/Movies');
-   
-    console.log("movieslit", movieslit);
+    let movieslit = this.http.get('https://localhost:7025/api/Movies');   
     this.http.get('https://localhost:7025/api/Movies').subscribe((response) => {
-      console.log("movies", response);
-      
+      console.log("movies", response);      
     })
 
-    
-  
   let movies=  localStorage.getItem('movies')
     return movies ? JSON.parse(movies) : [];
-
-  }
-
-  addMovie(movie:any)
-  {
-    let existingMovies = this.getAllMovies();
-    const movieExists = existingMovies.some(m => m.movieId == movie || m.movieName==movie.movieName);
-    if (!movieExists) {
-      existingMovies.push(movie);
-      localStorage.setItem('movies', JSON.stringify(existingMovies));
-      alert('Movie added successfully');
-    }
-    else {
-      alert('Movie already exists');
-    }
-
- 
   }
 
 
@@ -108,8 +88,6 @@ export class MovieService {
       alert('movie updated Sucessfully')
 
     }
-
-  
     
   }
 

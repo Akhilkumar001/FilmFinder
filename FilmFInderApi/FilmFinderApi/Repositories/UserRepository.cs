@@ -1,6 +1,7 @@
 ﻿using FilmFinderApi.Configuration;
 using FilmFinderApi.Models;
 using Microsoft.Extensions.Options;
+using MongoDB.Bson.IO;
 using MongoDB.Driver;
 
 namespace FilmFinderApi.Repositories

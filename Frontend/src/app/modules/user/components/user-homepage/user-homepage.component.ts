@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/Services/auth.service';
 import { Router } from '@angular/router';
 import { MovieService } from 'src/app/Services/movie.service';
+import { WatchlistService } from 'src/app/Services/watchlist.service';
+import { Watchlist } from 'src/app/models/watchlist';
 
 @Component({
   selector: 'app-user-homepage',
@@ -9,10 +11,15 @@ import { MovieService } from 'src/app/Services/movie.service';
   styleUrls: ['./user-homepage.component.css']
 })
 export class UserHomepageComponent implements OnInit{
-  constructor(private a: AuthService, private router: Router, private movieservice:MovieService) { }
+  selectedMovie:any
+  currentUser:any
+  constructor(private a: AuthService, private router: Router, private movieservice:MovieService, private watchlistservice:WatchlistService) { }
   searchQuery: string = '';
   
   movies:any[]=[]
+  isLoading: boolean=true;
+  noData: boolean=false;
+
   mainMovie = {
     title: 'Main Movie Title',
     imdbRating: '8.5',
@@ -22,39 +29,7 @@ export class UserHomepageComponent implements OnInit{
   };
   p:any;
 
-  // movies = [
-  //   {
-  //     title: 'Movie Title 1',
-  //     imdbRating: '7.5',
-  //     image: 'assets/images/movie1.jpg'
-  //   },
-  //   {
-  //     title: 'Movie Title 2',
-  //     imdbRating: '8.0',
-  //     image: 'assets/images/movie2.jpg'
-  //   },
-  //   {
-  //     title: 'Movie Title 3',
-  //     imdbRating: '9.0',
-  //     image: 'assets/images/movie3.jpg'
-  //   }
-  // ];
-
-  // movies: Array<{ id: number, title: string, rating: number, cast: string[], releaseDate: string, imageUrl: string }> = [
-  //   { id: 1, title: 'Inception', rating: 8.8, cast: ['Leonardo DiCaprio', 'Joseph Gordon-Levitt'], releaseDate: '2010-07-16', imageUrl: 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg' },
-  //   { id: 2, title: 'Interstellar', rating: 8.6, cast: ['Matthew McConaughey', 'Anne Hathaway'], releaseDate: '2014-11-07', imageUrl: 'FilmFinder\src\assets\images\image2.jpg' },
-  //   { id: 3, title: 'The Dark Knight', rating: 9.0, cast: ['Christian Bale', 'Heath Ledger'], releaseDate: '2008-07-18', imageUrl: 'assets\images\image3.jpg' },
-  //   { id: 4, title: 'The Matrix', rating: 8.7, cast: ['Keanu Reeves', 'Laurence Fishburne'], releaseDate: '1999-03-31', imageUrl: 'assets\images\image4.jpg' },
-  //   { id: 5, title: 'Pulp Fiction', rating: 8.9, cast: ['John Travolta', 'Uma Thurman'], releaseDate: '1994-10-14', imageUrl: 'assets\images\image5.jpg' },
-  //   { id: 6, title: 'Fight Club', rating: 8.8, cast: ['Brad Pitt', 'Edward Norton'], releaseDate: '1999-10-15', imageUrl: 'assets\images\image6.jpg' },
-  //   { id: 7, title: 'The Shawshank Redemption', rating: 9.3, cast: ['Tim Robbins', 'Morgan Freeman'], releaseDate: '1994-09-23', imageUrl: 'assets\images\image7.jpg' },
-  //   { id: 8, title: 'The Godfather', rating: 9.2, cast: ['Marlon Brando', 'Al Pacino'], releaseDate: '1972-03-24', imageUrl: 'assets\images\image8.jpg' },
-  //   { id: 9, title: 'The Lord of the Rings: The Return of the King', rating: 8.9, cast: ['Elijah Wood', 'Viggo Mortensen'], releaseDate: '2003-12-17', imageUrl: 'assets\images\image9.jpg' },
-  //   { id: 10, title: 'Forrest Gump', rating: 8.8, cast: ['Tom Hanks', 'Robin Wright'], releaseDate: '1994-07-06', imageUrl: 'assets\images\image10.jpg' }
-  // ];
   
-  
-   // Initially, display all movies
   filteredMovies:any[]=[]
  
   searchMovie() {
@@ -63,26 +38,72 @@ export class UserHomepageComponent implements OnInit{
       movie.movieName.toLowerCase().includes(this.searchQuery.toLowerCase())
     );
   } else {
-    // If the search query is empty, show all movies
     this.filteredMovies = [...this.movies];
   }
 }
 ngOnInit() {
+  this.loadMovies();
+ 
+
+ 
+}
+loadMovies(){
   this.movieservice.getMovies().subscribe(res => {
-    this.movies = res;
+    if(res.length>0){
+      this.movies = res;
     this.filteredMovies = [...this.movies];
+    this.watchlistservice.getAllWatchlist().subscribe(res=>{
+    
+    })
+    this.filteredMovies = this.filteredMovies.filter(movie => {
+      return new Date(movie.releaseDate) <= new Date()
+
+    })
+    this.isLoading=false;
+    }
+    else{
+      this.isLoading=false;
+      this.noData=true;
+    }
+    
     
  });
 
 }
+
+AddWatchlist(movieId:any){
+  this.movieservice.getMovieDetailsByMovieId(movieId).subscribe(res => {
+    this.selectedMovie = res;
+    this.currentUser = this.a.getLoggedInUser();
+    console.log(this.currentUser);
+    const watchlist:Watchlist = {
+      watchlistId: "66e0173c5d73003ecc74b75a",
+    movieId: this.selectedMovie.movieId,
+    movieName: this.selectedMovie.movieName,
+    uid: "66dca3b5cb1dc966999e7717",
+    userName: this.currentUser.firstName+" "+this.currentUser.lastName,
+    userEmail: this.currentUser.email,
+    isAddedToWatchlist: true
+    } 
+
+    this.watchlistservice.addWatchlist(watchlist).subscribe(res => {
+      console.log(res)
+      if(res!="failedToAddWatchList"){
+      alert("Added to Watchlist successfully")
+      }
+      
+    },
+    error=>{
+      alert("movie already Added To Watchlist")
+    }
+  )
+    
+   })
+  
+}
+
 navigateToMovieInfo() {
   this.router.navigate(['/user-movieinfo']);
 }
-
-  // searchMovie() {
-  //   console.log('Searching for:', this.searchQuery);
-  //   // Implement the search logic here
-  // }
-
 
 }

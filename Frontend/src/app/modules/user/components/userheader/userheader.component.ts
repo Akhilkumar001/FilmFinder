@@ -12,6 +12,7 @@ export class UserheaderComponent {
   constructor(private a: AuthService, private router: Router) { }  // Use Router here
 
   appName: string = "Film Finder";
+  isNavbarCollapsed = true; // Collapsed by default
   
   textColorDark: string = 'text-dark';
   textColorWhite: string = 'text-white';

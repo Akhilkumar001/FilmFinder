@@ -23,14 +23,11 @@ export const authGuard: CanActivateFn = (route, state) => {
 
   if (isRestrictedRoute) {
     if (currentUser?.userType=='user') {
-
       router.navigate(['/user-dashboard']);
       return false;
     } else {
-      
       return true;
     }
-    
   }
 
   return true;

@@ -1,0 +1,26 @@
+<app-userheader></app-userheader>
+<div class="loading" *ngIf="isLoading">
+  <img src="../../../../../assets/images/loading.gif">
+</div>
+
+
+<div *ngIf="!isLoading && !noData" class="container"> 
+  <div *ngFor="let movie of movieIds | paginate: { itemsPerPage: 8, currentPage: p };" class="card border-rounded bg shadow mb-3 d-flex flex-row justify-content-start align-items-center gap-5 ">
+    <img width="400px" [src]="movie.moviePicture" alt="">
+    <h1 class="col-6">{{movie.movieName}}</h1>
+    
+    <div class="d-flex justify-content-end">
+      <i class="bi bi-trash"(click)="deleteWatchlistById(movie.movieId)"  ></i>
+    </div>
+
+  </div>
+  
+</div>
+
+<div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+</div>
+<div class="loading" *ngIf="noData && !isLoading">
+  <h1>No Data Available</h1>
+</div>

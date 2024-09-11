@@ -1,2 +1,47 @@
 <app-header></app-header>
-<p>contact-us works!</p>
+<div class="bg-image d-flex align-items-center justify-content-center flex-column">
+    <div class="container content">
+      <h1 class="text-center mb-4">Contact Us</h1>
+      <p class="lead text-center">We'd love to hear from you!</p>
+      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter your name" required
+                 [(ngModel)]="contact.name" name="name" #name="ngModel">
+          <div *ngIf="name.invalid && name.touched" class="text-danger">
+            Name is required.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter your email" required
+                 [(ngModel)]="contact.email" name="email" #email="ngModel">
+          <div *ngIf="email.invalid && email.touched" class="text-danger">
+            Valid email is required.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required
+                 [(ngModel)]="contact.phone" name="phone" #phone="ngModel">
+          <div *ngIf="phone.invalid && phone.touched" class="text-danger">
+            Phone number is required.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="issue" class="form-label">Issue</label>
+          <textarea class="form-control" id="issue" rows="4" placeholder="Describe your issue" required
+                    [(ngModel)]="contact.issue" name="issue" #issue="ngModel"></textarea>
+          <div *ngIf="issue.invalid && issue.touched" class="text-danger">
+            Issue description is required.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-info w-100" [disabled]="contactForm.invalid">Send Message</button>
+      </form>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <p>For immediate assistance, call us at: <strong>+1-800-123-4567</strong></p>
+    <p>&copy; 2024 FilmFinder. All rights reserved.</p>
+  </div>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder,FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { v4 as uuidv4 } from 'uuid';
 import { AuthService } from '../../Services/auth.service';
 import { User } from 'src/app/models/User';
 import { ToastMessagesService } from 'src/app/Services/toast-messages.service';
@@ -19,51 +18,54 @@ export class RegisterComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
-   
+    private toast:ToastMessagesService
   ) { }
 
   ngOnInit(): void {
-    this.registerForm = this.fb.group({
-      firstName: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required]],
-      dob: ['', [Validators.required]],
-      location: ['', [Validators.required]],
-      profilePicture: ['']
-    }, { validator: this.passwordMatchValidator });
+    this.registerForm = new FormGroup({
+      firstName: new FormControl('', [Validators.required]),
+      lastName: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      confirmPassword: new FormControl('', [Validators.required]),
+      dob: new FormControl('', [Validators.required]),
+      location: new FormControl('', [Validators.required]),
+      profilePicture: new FormControl(null)
+    });
+  
+    // Apply the custom validator after the form group is initialized
+    this.registerForm.setValidators(this.passwordMatchValidator);
   }
-
-  passwordMatchValidator(form: FormGroup): { [key: string]: boolean } | null {
-    const password = form.get('password')?.value;
-    const confirmPassword = form.get('confirmPassword')?.value;
+  
+  passwordMatchValidator(control: AbstractControl): { [key: string]: boolean } | null {
+    const password = control.get('password')?.value;
+    const confirmPassword = control.get('confirmPassword')?.value;
+  
     return password === confirmPassword ? null : { passwordMismatch: true };
   }
+  
 
   onSubmit(): void {
     if (this.registerForm.valid) {
       const { firstName, lastName, email, password, dob, location } = this.registerForm.value;
       const user:User= {
-        uid: uuidv4(),
         firstName,
         lastName,
         email,
         password,
         dob,
-        userType: 'admin',
+        userType: 'user',
         location,
         profilePicture: this.profilePicture
       };
-      this.authService.register(user);
+      this.authService.register(user).subscribe(res=>{
+        console.log(res);
+      })
       console.log('User Registered:', user);
-   
-    
       setTimeout(()=>
       {
         this.router.navigate(['/signin']); 
       },4000)
-  
     } else {
       console.log('Form is invalid');
       alert("Please Enter Details In Correct Format  :( ")

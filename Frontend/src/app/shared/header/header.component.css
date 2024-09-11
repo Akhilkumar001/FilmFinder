@@ -1,6 +1,18 @@
-.logo{
+.highlight {
+    font-weight: bold;
+    border: 3px solid white;  /* Square red border */
+    border-radius: 7px;       /* Ensure no border-radius for square corners */
+}
+
+.logo {
     text-decoration: none;
     letter-spacing: 2px;
+}
+
+.logo-icon {
+    width: 50px; /* Adjust the size as necessary */
+    height: auto;
+    margin-right: 10px; /* Adds space between the icon and the text */
 }
 
 .text-white {

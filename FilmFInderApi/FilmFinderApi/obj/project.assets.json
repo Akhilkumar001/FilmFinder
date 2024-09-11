@@ -1555,19 +1555,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mahes\\.nuget\\packages\\": {}
+    "C:\\Users\\prane\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\My_WorkSpace\\WEB\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
+      "projectUniqueName": "E:\\Coding\\htmlcss\\angular\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
       "projectName": "FilmFinderApi",
-      "projectPath": "C:\\My_WorkSpace\\WEB\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
-      "packagesPath": "C:\\Users\\mahes\\.nuget\\packages\\",
-      "outputPath": "C:\\My_WorkSpace\\WEB\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\obj\\",
+      "projectPath": "E:\\Coding\\htmlcss\\angular\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\FilmFinderApi.csproj",
+      "packagesPath": "C:\\Users\\prane\\.nuget\\packages\\",
+      "outputPath": "E:\\Coding\\htmlcss\\angular\\FilmFinder\\FilmFInderApi\\FilmFinderApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mahes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\prane\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1635,7 +1635,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

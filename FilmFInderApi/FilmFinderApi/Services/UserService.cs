@@ -12,6 +12,15 @@ namespace FilmFinderApi.Services
             _userRepository = userRepository;
         }
 
+        public async Task<User?> LoginAsync(string email, string password)
+        {
+            var user = await _userRepository.FindByEmailAsync(email);
+            if (user != null && BCrypt.Net.BCrypt.Verify(password, user.Password))
+            {
+                return user;
+            }
+            return null;
+        }
 
         public Task<User> CreateAsync(User user)
         {
