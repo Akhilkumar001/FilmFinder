@@ -1,6 +1,6 @@
 ﻿using FilmFinderApi.Models;
 using FilmFinderApi.Services;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FilmFinderApi.Controllers
@@ -9,16 +9,13 @@ namespace FilmFinderApi.Controllers
     [ApiController]
     public class MoviesController : ControllerBase
     {
-
-
         private readonly IMovieService _movieService;
-
         public MoviesController(IMovieService movieService)
         {
             _movieService = movieService;
         }
 
-
+        // GET: api/movies
         [HttpGet("getAllmovies")]
         public async Task<ActionResult<IEnumerable<Movie>>> GetAllMovies()
         {
@@ -26,7 +23,7 @@ namespace FilmFinderApi.Controllers
             return Ok(movies);
         }
 
-
+        // GET: api/movies/{id}
         [HttpGet("getMovieDetailsByMovieId/{id}")]
         public async Task<ActionResult<Movie>> GetMovieById(string id)
         {
@@ -38,7 +35,7 @@ namespace FilmFinderApi.Controllers
             return Ok(movie);
         }
 
-
+        // POST: api/movies
         [HttpPost("addNewMovie")]
         public async Task<ActionResult> CreateMovie([FromBody] Movie movie)
         {
@@ -52,7 +49,7 @@ namespace FilmFinderApi.Controllers
             return CreatedAtAction(nameof(GetMovieById), new { id = movie.MovieId }, movie);
         }
 
-      
+        // PUT: api/movies/{id}
         [HttpPut("updateMovieByMovieId/{id}")]
         public async Task<ActionResult> UpdateMovie(string id, [FromBody] Movie movie)
         {
@@ -66,7 +63,8 @@ namespace FilmFinderApi.Controllers
             return NoContent();
         }
 
-        [HttpDelete("deleteMovieByMovieId{id}")]
+        // DELETE: api/movies/{id}
+        [HttpDelete("deleteMovieByMovieId/{id}")]
         public async Task<ActionResult> DeleteMovie(string id)
         {
             var existingMovie = await _movieService.GetMovieByIdAsync(id);

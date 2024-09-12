@@ -1,5 +1,4 @@
 export interface User {
-  uid: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -9,4 +8,3 @@ export interface User {
   location: string;
   profilePicture?: string | ArrayBuffer | null;
 }
-

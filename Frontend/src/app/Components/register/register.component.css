@@ -2,9 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height:700px;
+    height: 100vh;
     padding: 16px;
-    border-radius: 20px;
 }
 
 .login-form-card {
